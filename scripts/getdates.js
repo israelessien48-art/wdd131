@@ -1,5 +1,15 @@
+// Dynamically display the copyright year and last modified date
 
-// Set the last modified date in "DD/MM/YYYY HH:MM:SS" format
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Select the footer paragraph
+const footerParagraph = document.querySelector("footer p");
+
+// Set the copyright text to match the example format
+footerParagraph.innerHTML = `©${currentYear} 🌸 Israel Godwin Essien 🌸 Uyo, Nigeria`;
+
+// Format and display the last modified date
 const lastModified = new Date(document.lastModified);
 const formattedDate = lastModified.toLocaleString("en-GB", {
   day: "2-digit",
@@ -10,3 +20,4 @@ const formattedDate = lastModified.toLocaleString("en-GB", {
   second: "2-digit",
 });
 document.querySelector("#lastModified").textContent = formattedDate;
+
