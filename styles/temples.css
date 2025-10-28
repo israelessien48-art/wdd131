@@ -72,6 +72,7 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
 /* --- NAVIGATION (mobile + base) --- */
 nav {
   display: flex;
@@ -95,4 +96,39 @@ nav a:hover {
   color: #4b006e;
   transform: scale(1.05);
   border-radius: 8px;
+}
+
+/* ✅ RESPONSIVE HAMBURGER MENU FIX */
+
+/* Hide navigation by default on small screens */
+.navigation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Show navigation when hamburger menu is clicked */
+.navigation.open {
+  display: flex;
+}
+
+/* Style for the hamburger menu button */
+#menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Hide the hamburger menu on larger screens */
+@media (min-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: row;
+  }
 }
