@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #4B0082;
+  --text-color: #fff;
+  --font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: #fff;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.album {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+/* --- NAVIGATION (mobile + base) --- */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4b006e; /* purple header color */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  display: block;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER effect */
+nav a:hover {
+  background-color: #fff;
+  color: #4b006e;
+  transform: scale(1.05);
+  border-radius: 8px;
+}
