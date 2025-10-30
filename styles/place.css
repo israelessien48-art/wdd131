@@ -1,0 +1,117 @@
+:root {
+  --primary-color: #008751; /* Nigerian green */
+  --secondary-color: #ffffff; /* White */
+  --accent-color: #f1f1f1;
+  --text-color: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  background: rgba(0, 135, 81, 0.7);
+  color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.info, .weather {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.weather {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.weather-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* PSEUDO-ELEMENT EMOTICON FOR DESKTOP ONLY */
+@media (min-width: 700px) {
+  #weather-title::after {
+    content: " ⛅";
+    font-size: 1.5rem;
+  }
+
+  .weather-icon {
+    display: none; /* hide svg in desktop */
+  }
+}
+
+/* MOBILE VIEW - SHOW SVG */
+@media (max-width: 699px) {
+  #weather-title::after {
+    content: "";
+  }
+
+  .weather-icon {
+    display: block;
+  }
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
