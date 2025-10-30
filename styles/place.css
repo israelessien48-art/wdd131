@@ -1,0 +1,77 @@
+/* ---------- Global Variables ---------- */
+:root {
+  --primary-color: #d71a28;    /* red (flag color) */
+  --secondary-color: #00843d;  /* complementary green */
+  --text-color: #222;
+  --bg-color: #ffffff;
+}
+
+/* ---------- Base Styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+}
+
+/* ---------- Hero Section ---------- */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Weather Section ---------- */
+.weather {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 500px;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.weather-info p {
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.weather-icon {
+  width: 60px;
+  display: none; /* hidden on desktop */
+}
+
+/* ---------- About Section ---------- */
+.about {
+  padding: 1rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: justify;
+}
+
+/* ---------- Mobile View (SVG visible) ---------- */
+@media (max-width: 699px) {
+  .weather-icon {
+    display: inline;
+  }
+}
+
+/* ---------- Desktop View (pseudo-element emoticon) ---------- */
+@media (min-width: 700px) {
+  h2::after {
+    content: " ☀️";
+  }
+}
