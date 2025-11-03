@@ -103,6 +103,7 @@ function displayTemples(filteredTemples) {
   });
 }
 
+
 // ✅ Default (Show all)
 displayTemples(temples);
 
