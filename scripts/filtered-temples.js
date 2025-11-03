@@ -62,7 +62,7 @@ const temples = [
     dedicated: "2004, January, 11",
     area: 17500,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/400x250/accra-ghana-temple-lds-856932-wallpaper.jpg",
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana-temple/400x250/accra-ghana-temple-lds-856932-wallpaper.jpg",
   },
   {
     templeName: "Rome Italy",
@@ -70,7 +70,7 @@ const temples = [
     dedicated: "2019, March, 10",
     area: 41010,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-exterior-1951879-wallpaper.jpg",
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy-temple/400x250/rome-italy-temple-exterior-2172502.jpg",
   },
   {
     templeName: "Salt Lake",
@@ -78,7 +78,7 @@ const temples = [
     dedicated: "1893, April, 6",
     area: 382207,
     imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake/400x250/salt-lake-temple-lds-882383-wallpaper.jpg",
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-temple/400x250/salt-lake-temple-lds-299731-wallpaper.jpg",
   },
 ];
 
@@ -102,7 +102,6 @@ function displayTemples(filteredTemples) {
     album.appendChild(card);
   });
 }
-
 
 // ✅ Default (Show all)
 displayTemples(temples);
