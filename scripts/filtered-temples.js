@@ -91,11 +91,13 @@ function displayTemples(filteredTemples) {
   filteredTemples.forEach((temple) => {
     const card = document.createElement("figure");
     card.innerHTML = `
-      <h3>${temple.templeName}</h3>
-      <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
       <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+      <figcaption>
+        <h3>${temple.templeName}</h3>
+        <p><strong>Location:</strong> ${temple.location}</p>
+        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+        <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      </figcaption>
     `;
     album.appendChild(card);
   });
