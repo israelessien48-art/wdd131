@@ -4,6 +4,7 @@
   --font-family: 'Open Sans', sans-serif;
 }
 
+/* ====== BASE STYLES ====== */
 body {
   margin: 0;
   font-family: var(--font-family);
@@ -11,6 +12,7 @@ body {
   color: #222;
 }
 
+/* ====== HEADER ====== */
 header {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -25,17 +27,18 @@ header h1 {
   font-size: 1.25rem;
 }
 
+/* ====== NAVIGATION ====== */
 nav {
   display: flex;
   gap: 1rem;
 }
 
-/* navigation links - mobile defaults are column in temples-large.css or JS toggling */
 nav a {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
   padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
 }
 
 nav a:hover,
@@ -46,7 +49,7 @@ nav a[aria-current="true"] {
   border-radius: 6px;
 }
 
-/* visually-hidden for heading */
+/* ====== VISUALLY HIDDEN ====== */
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -56,7 +59,7 @@ nav a[aria-current="true"] {
   white-space: nowrap;
 }
 
-/* Album grid (keeps same layout as your Week 2) */
+/* ====== ALBUM GRID ====== */
 .album {
   display: grid;
   grid-template-columns: 1fr;
@@ -67,107 +70,7 @@ nav a[aria-current="true"] {
   text-align: center;
 }
 
-/* Figure card (matching original look) */
-.album figure {
-  margin: 0;
-}
-
-.album figure img {
-  width: 100%;
-  border-radius: 5px;
-  display: block;
-}
-
-.album figcaption {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  color: #222;
-}
-
-/* footer */
-footer {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* NAV: mobile base - collapse (nav toggled via .open from JS) */
-.navigation {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: #4b006e;
-  position: absolute;
-  top: 64px;
-  right: 1rem;
-  border-radius: 8px;
-  padding: 0.5rem;
-  z-index: 1000;
-}
-
-.navigation.open {
-  display: flex;
-}
-
-/* nav link style for mobile */
-.navigation a {
-  color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.25rem;
-  display: block;
-}
-
-/* hover effect kept */
-.navigation a:hover {
-  background-color: #fff;
-  color: #4b006e;
-  transform: scale(1.02);
-  border-radius: 8px;
-}
-
-/* menu button */
-#menu {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Responsive: larger screens */
-@media (min-width: 768px) {
-  #menu {
-    display: none;
-  }
-
-  .navigation {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    padding: 0;
-  }
-
-  .album {
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    gap: 1.5rem;
-  }
-
-  .album figure img {
-    width: 300px;
-    height: auto;
-  }
-}
-
-.album {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
+/* ====== TEMPLE CARDS ====== */
 figure {
   background: #fff;
   border: 1px solid #ccc;
@@ -198,13 +101,77 @@ figure img {
   margin-top: 1rem;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: block;
 }
 
-/* Responsive Grid */
+/* ====== FOOTER ====== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ====== MOBILE NAVIGATION ====== */
+.navigation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #4b006e;
+  position: absolute;
+  top: 64px;
+  right: 1rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.navigation.open {
+  display: flex;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  display: block;
+}
+
+.navigation a:hover {
+  background-color: #fff;
+  color: #4b006e;
+  transform: scale(1.02);
+  border-radius: 8px;
+}
+
+/* ====== MENU BUTTON ====== */
+#menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ====== RESPONSIVE: LARGE SCREENS ====== */
 @media (min-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+  }
+
   .album {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    gap: 1.5rem;
   }
 
   figure img {

@@ -110,26 +110,54 @@ const newTemples = () => temples.filter((t) => parseInt(t.dedicated.split(",")[0
 const largeTemples = () => temples.filter((t) => t.area > 90000);
 const smallTemples = () => temples.filter((t) => t.area < 10000);
 
-// ✅ Event Listeners for Navigation
-document.getElementById("home").addEventListener("click", () => displayTemples(temples));
-document.getElementById("old").addEventListener("click", () => displayTemples(oldTemples()));
-document.getElementById("new").addEventListener("click", () => displayTemples(newTemples()));
-document.getElementById("large").addEventListener("click", () => displayTemples(largeTemples()));
-document.getElementById("small").addEventListener("click", () => displayTemples(smallTemples()));
+// ✅ Event Listeners for Navigation (use data-filter attributes)
+const navLinks = document.querySelectorAll("nav a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const filter = link.dataset.filter;
+
+    // remove active state from all
+    navLinks.forEach((l) => l.removeAttribute("aria-current"));
+    link.setAttribute("aria-current", "true");
+
+    switch (filter) {
+      case "old":
+        displayTemples(oldTemples());
+        break;
+      case "new":
+        displayTemples(newTemples());
+        break;
+      case "large":
+        displayTemples(largeTemples());
+        break;
+      case "small":
+        displayTemples(smallTemples());
+        break;
+      default:
+        displayTemples(temples);
+        break;
+    }
+
+    // close menu if on mobile
+    navigation.classList.remove("open");
+    menuButton.textContent = "☰";
+  });
+});
 
 // ✅ Footer Info
 document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleString(
-  "en-GB",
-  {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  }
-);
+document.getElementById("lastModified").textContent = new Date(
+  document.lastModified
+).toLocaleString("en-GB", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+});
 
 // ✅ Hamburger Menu Toggle
 const menuButton = document.getElementById("menu");

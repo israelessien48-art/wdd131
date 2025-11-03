@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Filtered Temple Album - dynamically generated cards with lazy-loading and filters." />
-  <meta name="author" content="Israel Godwin Essien" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Filtered Temple Album - dynamically generated cards with lazy-loading and filters.">
+  <meta name="author" content="Israel Godwin Essien">
   <title>Filtered Temple Album</title>
 
   <!-- Google Fonts -->
@@ -24,18 +24,18 @@
     <button id="menu" aria-label="Menu" aria-controls="main-nav" aria-expanded="false">☰</button>
 
     <nav id="main-nav" class="navigation" aria-label="Main navigation">
-      <a href="#" data-filter="home" aria-current="true">Home</a>
-      <a href="#" data-filter="old">Old</a>
-      <a href="#" data-filter="new">New</a>
-      <a href="#" data-filter="large">Large</a>
-      <a href="#" data-filter="small">Small</a>
+      <a href="#" id="home" data-filter="home" aria-current="true">Home</a>
+      <a href="#" id="old" data-filter="old">Old</a>
+      <a href="#" id="new" data-filter="new">New</a>
+      <a href="#" id="large" data-filter="large">Large</a>
+      <a href="#" id="small" data-filter="small">Small</a>
     </nav>
   </header>
 
   <main>
     <h2 class="visually-hidden">Temple Gallery</h2>
 
-    <!-- container where JS will inject <figure> cards -->
+    <!-- JS will inject <figure> cards here -->
     <div class="album" id="temple-list" aria-live="polite"></div>
   </main>
 
@@ -45,6 +45,6 @@
   </footer>
 
   <!-- Script (keep in scripts/ directory) -->
-  <script src="scripts/filtered-temples.js"></script>
+  <script src="scripts/filtered-temples.js" defer></script>
 </body>
 </html>
