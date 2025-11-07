@@ -42,7 +42,6 @@ nav a {
   transition: all 0.2s ease;
 }
 
-/* Hover and active link */
 nav a:hover,
 nav a[aria-current="true"] {
   background-color: #fff;
