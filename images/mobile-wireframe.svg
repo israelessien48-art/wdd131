@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812" aria-labelledby="mTitle mDesc" role="img">
+  <title id="mTitle">Mobile wireframe</title>
+  <desc id="mDesc">Wireframe of mobile homepage: header with logo and menu, hero image, heading, paragraph, two feature boxes, footer.</desc>
+
+  <!-- phone outline -->
+  <rect x="6" y="6" width="363" height="800" rx="28" ry="28" fill="none" stroke="#222" stroke-width="4"/>
+
+  <!-- header -->
+  <rect x="20" y="30" width="335" height="60" rx="6" fill="none" stroke="#222" stroke-width="2"/>
+  <!-- logo -->
+  <circle cx="48" cy="60" r="18" fill="none" stroke="#222" stroke-width="2"/>
+  <rect x="74" y="47" width="140" height="24" fill="none" stroke="#222" stroke-width="1.5"/>
+  <!-- menu icon -->
+  <g transform="translate(320,48)">
+    <rect x="-6" y="-8" width="28" height="3" fill="#222"/>
+    <rect x="-6" y="0" width="28" height="3" fill="#222"/>
+    <rect x="-6" y="8" width="28" height="3" fill="#222"/>
+  </g>
+
+  <!-- hero image box -->
+  <rect x="30" y="110" width="315" height="160" fill="none" stroke="#222" stroke-width="2"/>
+  <line x1="30" y1="110" x2="345" y2="270" stroke="#222" stroke-width="1.2"/>
+  <line x1="345" y1="110" x2="30" y2="270" stroke="#222" stroke-width="1.2"/>
+
+  <!-- heading -->
+  <rect x="30" y="290" width="315" height="36" fill="none" stroke="#222" stroke-width="0.8"/>
+  <rect x="30" y="336" width="260" height="18" fill="none" stroke="#222" stroke-width="0.6"/>
+
+  <!-- feature boxes -->
+  <rect x="30" y="380" width="145" height="90" fill="none" stroke="#222" stroke-width="1.5"/>
+  <line x1="30" y1="380" x2="175" y2="470" stroke="#222" stroke-width="1"/>
+  <line x1="175" y1="380" x2="30" y2="470" stroke="#222" stroke-width="1"/>
+
+  <rect x="200" y="380" width="145" height="90" fill="none" stroke="#222" stroke-width="1.5"/>
+  <line x1="200" y1="380" x2="345" y2="470" stroke="#222" stroke-width="1"/>
+  <line x1="345" y1="380" x2="200" y2="470" stroke="#222" stroke-width="1"/>
+
+  <!-- captions below feature boxes -->
+  <rect x="30" y="480" width="145" height="18" fill="none" stroke="#222" stroke-width="0.6"/>
+  <rect x="200" y="480" width="145" height="18" fill="none" stroke="#222" stroke-width="0.6"/>
+
+  <!-- footer -->
+  <rect x="20" y="720" width="335" height="60" rx="8" fill="none" stroke="#222" stroke-width="1.2"/>
+  <rect x="120" y="740" width="140" height="18" fill="none" stroke="#222" stroke-width="0.6"/>
+</svg>
