@@ -1,0 +1,42 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f1f1f1;
+  color: #222;
+  margin: 2rem;
+}
+
+h1, h2 {
+  font-family: "Poppins", sans-serif;
+  color: #4CAF50;
+}
+
+header, footer {
+  text-align: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+section {
+  background: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.color-samples {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.color-box {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
