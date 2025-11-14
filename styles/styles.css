@@ -55,6 +55,15 @@ input, select, textarea {
 .rating-group label {
     font-size: 1.2rem;
     margin-right: 8px;
+    cursor: pointer;
+}
+
+.rating-group input[type="radio"] {
+    display: none; /* hide radios */
+}
+
+.rating-group input[type="radio"]:checked + label {
+    color: gold; /* fill stars on selection */
 }
 
 .checkbox-group {
@@ -77,12 +86,33 @@ input, select, textarea {
     opacity: 0.9;
 }
 
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    transform: scale(1.2);
+    margin-right: 6px;
+}
+
 footer {
     text-align: center;
     padding: 1rem;
     background: var(--primary);
     color: var(--light);
     margin-top: 20px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* DESKTOP */

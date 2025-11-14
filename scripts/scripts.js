@@ -6,12 +6,12 @@ const products = [
     { id: "ds-1985", name: "Hoverboard" }
 ];
 
-// Populate select menu
+// Populate select menu dynamically
 const select = document.querySelector("#product-name");
 
 products.forEach(product => {
     const opt = document.createElement("option");
-    opt.value = product.id;
-    opt.textContent = product.name;
+    opt.value = product.id;       // ID as value
+    opt.textContent = product.name; // Name as display
     select.appendChild(opt);
 });

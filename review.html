@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Review submission confirmation page showing number of reviews submitted.">
     <title>Review Submitted</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 <body>
+
 <header>
     <h1>Review Submitted</h1>
 </header>
 
 <main>
     <p>Thank you! Your review has been submitted.</p>
-
     <p>You have submitted <strong><span id="count"></span></strong> reviews so far.</p>
+    <p><a href="form.html">Submit another review</a></p>
 </main>
 
 <footer>
@@ -24,12 +25,13 @@
 </footer>
 
 <script>
-let count = Number(localStorage.getItem("reviewCount")) || 0;
-count++;
-localStorage.setItem("reviewCount", count);
+    // Track review count using localStorage
+    let count = Number(localStorage.getItem("reviewCount")) || 0;
+    count++;
+    localStorage.setItem("reviewCount", count);
+    document.getElementById("count").textContent = count;
 
-document.getElementById("count").textContent = count;
-document.getElementById("lastModified").textContent = document.lastModified;
+    document.getElementById("lastModified").textContent = document.lastModified;
 </script>
 
 </body>
