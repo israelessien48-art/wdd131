@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Review Submitted - WDD131" />
-  <title>Review Submitted</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="scripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submitted</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <h1 class="site-title">Product Review</h1>
-    </div>
-  </header>
+<header>
+    <h1>Review Submitted</h1>
+</header>
 
-  <main>
-    <div class="frame">
-      <div class="card card-center">
-        <h2>Thanks — your review was submitted</h2>
-        <p class="summary">You have submitted <strong id="reviewCount">0</strong> review(s).</p>
-        <a class="back" href="form.html">← Back to form</a>
-      </div>
-    </div>
-  </main>
+<main>
+    <p>Thank you! Your review has been submitted.</p>
 
-  <footer class="site-footer" role="contentinfo">
-    <p>©2025 🌸 Israel Godwin Essien 🌸 Nigeria</p>
-    <p id="lastModified" class="muted" aria-live="polite"></p>
-  </footer>
+    <p>You have submitted <strong><span id="count"></span></strong> reviews so far.</p>
+</main>
+
+<footer>
+    <p>&copy; 2025 | Israel Godwin Essien — Nigeria</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+<script>
+let count = Number(localStorage.getItem("reviewCount")) || 0;
+count++;
+localStorage.setItem("reviewCount", count);
+
+document.getElementById("count").textContent = count;
+document.getElementById("lastModified").textContent = document.lastModified;
+</script>
+
 </body>
 </html>

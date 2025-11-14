@@ -1,132 +1,93 @@
-/* Layout A: small centered white card with dark-blue frame #0d355d */
-
-/* Variables */
-:root{
-  --frame-blue: #0d355d;    /* exact color you requested */
-  --panel:#e8edf5;          /* very light panel behind card */
-  --card:#ffffff;           /* white card */
-  --muted:#6e6e6e;
-  --btn-gray:#dbdbdb;
-  --text:#222;
-  --radius:8px;
+:root {
+    --primary: #4B0082;
+    --light: #ffffff;
+    --gray: #f4f4f4;
+    --dark: #222;
 }
 
-/* Reset + base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background:#ffffff;
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--gray);
+    color: var(--dark);
 }
 
-/* Header */
-.site-header{
-  background:var(--frame-blue);
-  color:#fff;
-  padding:14px 0 18px;
-  text-align:center;
-}
-.header-inner{max-width:1000px;margin:0 auto;padding:0 16px}
-.site-title{margin:0;font-size:18px;font-weight:700;letter-spacing:0.3px}
-
-/* Main layout */
-main{display:flex;justify-content:center;padding:18px 12px 36px}
-
-/* Frame - dark blue border rectangle surrounding the white card */
-.frame{
-  width:360px;                /* narrow, mobile-first width like screenshot */
-  background:var(--frame-blue);
-  border-radius:10px;
-  padding:10px;
-  box-shadow:0 6px 18px rgba(13,53,93,0.08);
-  border:2px solid rgba(255,255,255,0.06);
+header {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--light);
 }
 
-/* Panel inside frame to create lighter inset feel */
-.frame::before{
-  content:"";
-  display:block;
-  margin-bottom:6px;
+.sub {
+    font-size: 0.9rem;
+    margin-top: -10px;
 }
 
-/* White card */
-.card{
-  background:var(--card);
-  border-radius:8px;
-  padding:16px;
-  border:1px solid rgba(0,0,0,0.04);
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+main {
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
-/* Centering variant */
-.card-center{text-align:center}
-
-/* Form labels & helpers */
-label{display:block;font-size:13px;font-weight:700;margin:8px 0 6px;color:var(--text)}
-.req{color:#b30000;margin-left:6px}
-.help{font-size:12px;color:var(--muted);font-weight:600;margin-left:6px}
-.optional{font-weight:700;color:var(--muted)}
-
-/* Inputs */
-select, input[type="text"], input[type="date"], textarea{
-  width:100%;
-  padding:9px 10px;
-  border-radius:6px;
-  border:1px solid #cfc7cf;
-  font-size:14px;
-  background:#fff;
-  margin-top:6px;
-}
-textarea{min-height:88px;resize:vertical}
-
-/* Rating row */
-.rating{display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap}
-.star{
-  display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:6px;border:1px solid transparent;cursor:pointer;font-weight:700;font-size:14px;color:var(--muted)
-}
-.star input{display:none}
-.stars{letter-spacing:3px}
-
-/* Checkboxes */
-.checkboxes{display:block;margin-top:6px}
-.checkboxes label{display:flex;align-items:center;gap:8px;padding:6px 0;font-weight:700;font-size:14px}
-
-/* Button */
-.actions{margin-top:14px}
-.btn{
-  width:100%;
-  padding:11px 12px;
-  border-radius:8px;
-  background:var(--btn-gray);
-  border:1px solid rgba(0,0,0,0.06);
-  font-weight:800;
-  font-size:15px;
-  cursor:pointer;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Footer (aligned with frame left on wide screens, centered on mobile) */
-.site-footer{
-  text-align:left;
-  padding:12px 16px 36px;
-  color:var(--frame-blue);
-  margin-left:calc((100% - 360px)/2); /* align with the frame */
-  font-size:13px;
+label {
+    font-weight: bold;
 }
-.muted{color:var(--muted);font-size:12px;margin-top:6px}
 
-/* Review page specifics */
-.summary{font-size:15px;margin:12px 0;color:var(--muted)}
-#reviewCount{font-size:34px;color:var(--frame-blue);font-weight:800;display:block;margin-top:8px}
-.back{display:inline-block;margin-top:12px;color:var(--frame-blue);font-weight:700;text-decoration:none}
+.required {
+    color: red;
+}
 
-/* Utilities */
-.sr-only{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+input, select, textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
 
-/* Responsive: frame becomes full width with padding on small screens */
-@media (max-width:420px){
-  .frame{width:100%;margin:0;padding:12px}
-  .site-footer{margin-left:0;text-align:center}
+.rating-group label {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--light);
+    margin-top: 20px;
+}
+
+/* DESKTOP */
+@media (min-width: 700px) {
+    main {
+        max-width: 600px;
+    }
 }
