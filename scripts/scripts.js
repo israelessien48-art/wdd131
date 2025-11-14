@@ -1,4 +1,4 @@
-// ---------------- Product array (id + name) ----------------
+/* Product array (id + name). Option value uses id per rubric. */
 const products = [
   { id: "laptop-01", name: "Laptop" },
   { id: "phone-01", name: "Smartphone" },
@@ -9,20 +9,23 @@ const products = [
   { id: "mon-01", name: "Monitor" }
 ];
 
-// Populate the product select element (value is product id per rubric)
-function populateProducts() {
-  const select = document.getElementById("product");
-  if (!select) return;
-  // keep placeholder intact
+function populateProductSelect() {
+  const sel = document.getElementById("product");
+  if (!sel) return;
   products.forEach(p => {
     const opt = document.createElement("option");
-    opt.value = p.id;      // rubric requires value to be id
+    opt.value = p.id;       // value is id (rubric requirement)
     opt.textContent = p.name;
-    select.appendChild(opt);
+    sel.appendChild(opt);
   });
 }
 
-// Display review count on review.html
+function setLastModified() {
+  const el = document.getElementById("lastModified");
+  if (!el) return;
+  el.textContent = "Last Modification: " + document.lastModified;
+}
+
 function showReviewCount() {
   const el = document.getElementById("reviewCount");
   if (!el) return;
@@ -30,23 +33,15 @@ function showReviewCount() {
   el.textContent = count;
 }
 
-// Set lastModified footer text
-function setLastModified() {
-  const el = document.getElementById("lastModified");
-  if (!el) return;
-  el.textContent = "Last Modification: " + document.lastModified;
-}
-
-// Handle form submit:
-// increment localStorage counter, then navigate to review.html (preserving GET)
+// Attach submit handler: validate required fields, increment counter, then redirect
 function attachFormHandler() {
   const form = document.getElementById("reviewForm");
   if (!form) return;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  form.addEventListener("submit", function (ev) {
+    // prevent default so we increment localStorage first
+    ev.preventDefault();
 
-    // basic required checks (product, rating, date)
     const productVal = document.getElementById("product").value;
     const ratingChecked = document.querySelector('input[name="rating"]:checked');
     const dateVal = document.getElementById("installDate").value;
@@ -56,8 +51,8 @@ function attachFormHandler() {
       return;
     }
     if (!ratingChecked) {
-      // focus a rating to show validation help
-      document.getElementById("rating1").focus();
+      // focus first rating to show user something is required
+      document.getElementById("r1").focus();
       return;
     }
     if (!dateVal) {
@@ -65,23 +60,19 @@ function attachFormHandler() {
       return;
     }
 
-    // increment localStorage counter
+    // increment counter
     const current = Number(localStorage.getItem("reviewCount")) || 0;
-    const next = current + 1;
-    localStorage.setItem("reviewCount", next);
+    localStorage.setItem("reviewCount", current + 1);
 
-    // Build GET query string same as native form behavior
+    // Build GET query string from form and navigate to review.html
     const params = new URLSearchParams(new FormData(form)).toString();
-
-    // Navigate to review page (preserve query string so behavior mimics GET)
     window.location.href = "review.html" + (params ? "?" + params : "");
   });
 }
 
-// DOM ready
 document.addEventListener("DOMContentLoaded", function () {
-  populateProducts();
-  showReviewCount();
+  populateProductSelect();
   setLastModified();
   attachFormHandler();
+  showReviewCount(); // harmless on form page; shows count on review page
 });
