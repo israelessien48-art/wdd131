@@ -1,15 +1,20 @@
 :root {
   --primary-color: #4B0082;
   --text-color: #fff;
+  --body-color: #222;
   --font-family: 'Open Sans', sans-serif;
+  --card-bg: #fff;
+  --card-border: #ccc;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-img-shadow: rgba(0, 0, 0, 0.15);
 }
 
 /* ====== BASE STYLES ====== */
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: #fff;
-  color: #222;
+  background-color: var(--card-bg);
+  color: var(--body-color);
 }
 
 /* ====== HEADER ====== */
@@ -28,12 +33,12 @@ header h1 {
 }
 
 /* ====== NAVIGATION ====== */
-nav {
+nav, .navigation {
   display: flex;
   gap: 1rem;
 }
 
-nav a {
+nav a, .navigation a {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
@@ -42,9 +47,9 @@ nav a {
   transition: all 0.2s ease;
 }
 
-nav a:hover,
-nav a[aria-current="true"] {
-  background-color: #fff;
+nav a:hover, nav a[aria-current="true"],
+.navigation a:hover, .navigation a[aria-current="true"] {
+  background-color: var(--card-bg);
   color: var(--primary-color);
   transform: translateY(-2px);
 }
@@ -72,15 +77,11 @@ nav a[aria-current="true"] {
 
 /* ====== TEMPLE CARDS ====== */
 figure {
-  background: #fff;
-  border: 1px solid #ccc;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 2px 8px var(--card-shadow);
 }
 
 figure h3 {
@@ -90,7 +91,7 @@ figure h3 {
 
 figure p {
   margin: 0.3rem 0;
-  color: #333;
+  color: var(--body-color);
 }
 
 figure p strong {
@@ -101,11 +102,11 @@ figure p strong {
 
 figure img {
   width: 100%;
-  max-width: 300px;
   margin-top: 1rem;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px var(--card-img-shadow);
   display: block;
+  object-fit: cover;
 }
 
 /* ====== FOOTER ====== */
@@ -136,24 +137,15 @@ footer {
 }
 
 .navigation a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.75rem 1.25rem;
   display: block;
-}
-
-.navigation a:hover {
-  background-color: #fff;
-  color: var(--primary-color);
-  transform: scale(1.02);
-  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
 }
 
 /* ====== MENU BUTTON ====== */
 #menu {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--text-color);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -175,12 +167,10 @@ footer {
   .album {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 1.5rem;
   }
 
   figure img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    width: 300px;
+    height: 200px; /* fixed height for uniform cards */
   }
 }
