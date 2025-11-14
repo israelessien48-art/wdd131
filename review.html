@@ -24,15 +24,7 @@
     <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
 
-<script>
-    // Track review count using localStorage
-    let count = Number(localStorage.getItem("reviewCount")) || 0;
-    count++;
-    localStorage.setItem("reviewCount", count);
-    document.getElementById("count").textContent = count;
-
-    document.getElementById("lastModified").textContent = document.lastModified;
-</script>
+<script src="scripts/scripts.js" defer></script>
 
 </body>
 </html>

@@ -27,11 +27,20 @@
         <!-- RATING -->
         <label>Overall Rating <span class="required">*</span></label>
         <div class="rating-group">
-            <label><input type="radio" name="rating" id="rate1" value="1" required> ☆</label>
-            <label><input type="radio" name="rating" id="rate2" value="2"> ☆☆</label>
-            <label><input type="radio" name="rating" id="rate3" value="3"> ☆☆☆</label>
-            <label><input type="radio" name="rating" id="rate4" value="4"> ☆☆☆☆</label>
-            <label><input type="radio" name="rating" id="rate5" value="5"> ☆☆☆☆☆</label>
+            <input type="radio" name="rating" id="rate1" value="1" required>
+            <label for="rate1">☆</label>
+
+            <input type="radio" name="rating" id="rate2" value="2">
+            <label for="rate2">☆☆</label>
+
+            <input type="radio" name="rating" id="rate3" value="3">
+            <label for="rate3">☆☆☆</label>
+
+            <input type="radio" name="rating" id="rate4" value="4">
+            <label for="rate4">☆☆☆☆</label>
+
+            <input type="radio" name="rating" id="rate5" value="5">
+            <label for="rate5">☆☆☆☆☆</label>
         </div>
 
         <!-- DATE -->
@@ -74,9 +83,6 @@
 </footer>
 
 <script src="scripts/scripts.js" defer></script>
-<script>
-    document.getElementById("lastModified").textContent = document.lastModified;
-</script>
 
 </body>
 </html>

@@ -52,18 +52,14 @@ input, select, textarea {
     border: 1px solid #ccc;
 }
 
+.rating-group input[type="radio"] {
+    display: none;
+}
+
 .rating-group label {
     font-size: 1.2rem;
     margin-right: 8px;
     cursor: pointer;
-}
-
-.rating-group input[type="radio"] {
-    display: none; /* hide radios */
-}
-
-.rating-group input[type="radio"]:checked + label {
-    color: gold; /* fill stars on selection */
 }
 
 .checkbox-group {
