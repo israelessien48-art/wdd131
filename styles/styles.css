@@ -83,8 +83,8 @@ footer {
 /* STAR RATING */
 .rating-group {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .rating-group input {
@@ -92,21 +92,17 @@ footer {
 }
 
 .rating-group label.star {
-    font-size: 2rem;
-    color: #ccc;
+    font-size: 1.5rem;
     cursor: pointer;
-    margin: 0 2px;
+    color: #ccc;
     transition: color 0.2s;
 }
 
-/* Hover effect */
 .rating-group label.star:hover,
 .rating-group label.star:hover ~ label.star {
     color: gold;
 }
 
-/* Checked effect */
-.rating-group input:checked ~ label.star,
 .rating-group input:checked + label.star,
 .rating-group input:checked + label.star ~ label.star {
     color: gold;

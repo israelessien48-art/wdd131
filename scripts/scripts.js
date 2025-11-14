@@ -11,19 +11,18 @@ const select = document.querySelector("#product-name");
 if (select) {
     products.forEach(product => {
         const opt = document.createElement("option");
-        opt.value = product.id;
-        opt.textContent = product.name;
+        opt.value = product.id;       // ID as value
+        opt.textContent = product.name; // Name as display
         select.appendChild(opt);
     });
 }
 
-// Track last modified
+// Track review count and last modified
 const lastModElem = document.getElementById("lastModified");
 if(lastModElem) {
     lastModElem.textContent = document.lastModified;
 }
 
-// Track review count
 const countElem = document.getElementById("count");
 if(countElem) {
     let count = Number(localStorage.getItem("reviewCount")) || 0;
