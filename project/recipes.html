@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickChef - Recipes</title>
+    <link rel="stylesheet" href="css/taste.css">
+</head>
+<body>
+    <header>
+        <h1>QuickChef</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align:center; padding:1rem;">Our Best Recipes</h2>
+
+        <div style="text-align:center; margin-bottom:1rem;">
+            <label for="categoryFilter">Filter by Category: </label>
+            <select id="categoryFilter">
+                <option>All</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Drinks</option>
+            </select>
+        </div>
+
+        <section class="card-container" id="recipeContainer">
+            <!-- Recipes loaded dynamically via main.js -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 QuickChef | <a href="references.html" style="color:#f1faee;">References</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
