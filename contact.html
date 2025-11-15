@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nature Nook | Home</title>
+  <title>Nature Nook | Join Us</title>
   <link rel="stylesheet" href="css/nature.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="assets/images/logo.svg" alt="Nature Nook Logo" width="40">
+      <img src="assets/images/logo.svg" width="40">
       Nature Nook
     </div>
     <ul>
@@ -25,17 +25,19 @@
 
 <section class="hero">
   <div>
-    <h1>Discover the Beauty of Nature</h1>
-    <p>Explore parks, animals, forests, and the wonders of creation through our curated guides and interactive experiences.</p>
+    <h1>Join the Community</h1>
+
+    <form id="joinForm">
+      <label>Name: <input type="text" id="name" required></label><br><br>
+      <label>Email: <input type="email" id="email" required></label><br><br>
+      <button type="submit">Join</button>
+    </form>
+
+    <p id="message"></p>
   </div>
-  <img src="assets/images/hero.svg" loading="lazy" alt="Nature image">
+
+  <img src="assets/images/hero.svg" loading="lazy">
 </section>
-
-<section class="grid" id="natureCards"></section>
-
-<footer>
-  © 2025 Nature Nook — <a href="references.html" style="color:#aaffaa;">References</a>
-</footer>
 
 <script src="js/main.js"></script>
 </body>
