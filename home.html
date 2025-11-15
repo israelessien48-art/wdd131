@@ -1,42 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nature Nook | Home</title>
-  <link rel="stylesheet" href="css/nature.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Recipe Book — Home</title>
+  <meta name="description" content="A compact recipe book: quick, tested recipes for everyday cooking." />
+  <link rel="stylesheet" href="css/nature.css" />
 </head>
 <body>
-
-<header>
-  <nav>
-    <div class="logo">
-      <img src="assets/images/logo.svg" alt="Nature Nook Logo" width="40">
-      Nature Nook
+  <header class="site-header" role="banner">
+    <div class="site-brand">
+      <img src="assets/images/hero.svg" alt="Simple Recipe Book logo" width="56" height="56" />
+      <h1>Simple Recipe Book</h1>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Explore</a></li>
-      <li><a href="contact.html">Join Us</a></li>
-      <li><a href="references.html">References</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero">
-  <div>
-    <h1>Discover the Beauty of Nature</h1>
-    <p>Explore parks, animals, forests, and the wonders of creation through our curated guides and interactive experiences.</p>
-  </div>
-  <img src="assets/images/hero.svg" loading="lazy" alt="Nature image">
-</section>
+  <main class="wrapper" id="mainContent">
+    <section aria-labelledby="welcome-title" class="showcase">
+      <h2 id="welcome-title">Cook something delicious today</h2>
+      <p class="lede">Three easy, tasty recipes to get you started — view details, save favorites locally, and try them tonight.</p>
+    </section>
 
-<section class="grid" id="natureCards"></section>
+    <section aria-labelledby="featured-title" class="grid" id="recipeGrid">
+      <h2 id="featured-title" class="sr-only">Featured Recipes</h2>
+      <!-- Recipes injected via JavaScript -->
+    </section>
+  </main>
 
-<footer>
-  © 2025 Nature Nook — <a href="references.html" style="color:#aaffaa;">References</a>
-</footer>
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2025 Simple Recipe Book</p>
+    <p><a href="references.html">References</a></p>
+  </footer>
 
-<script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

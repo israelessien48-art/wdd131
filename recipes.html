@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipes — Simple Recipe Book</title>
+  <meta name="description" content="All recipes: search, filter, and view detailed instructions." />
+  <link rel="stylesheet" href="css/nature.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="site-brand">
+      <img src="assets/images/hero.svg" alt="logo" width="56" height="56" />
+      <h1>Simple Recipe Book</h1>
+    </div>
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+    <section class="controls" aria-label="Search and filter">
+      <label for="searchInput">Search recipes</label>
+      <input id="searchInput" type="search" placeholder="e.g., pancakes" />
+      <label for="filterSelect">Filter by type</label>
+      <select id="filterSelect">
+        <option value="all">All</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="brunch">Brunch</option>
+        <option value="salad">Salad</option>
+      </select>
+    </section>
+
+    <section id="allRecipes" class="grid" aria-live="polite">
+      <!-- JS renders recipe cards here -->
+    </section>
+
+    <section id="detailModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-content">
+        <button id="closeModal" class="close-btn" aria-label="Close details">×</button>
+        <div id="modalBody"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Simple Recipe Book</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
