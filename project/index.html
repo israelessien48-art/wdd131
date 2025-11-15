@@ -1,98 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TasteBite — Simple Recipe Book</title>
-  <meta name="description" content="TasteBite — easy, tested recipes. Save favorites, explore step-by-step directions and submit your own recipe." />
-  <link rel="stylesheet" href="css/taste.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Israel Essien’s Nigerian Resort Restaurant homepage.">
+  <title>Home | Nigerian Resort Restaurant</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <div class="brand">
-        <img src="images/logo.svg" alt="TasteBite logo" width="48" height="48" />
-        <span class="brand-title">TasteBite</span>
-      </div>
-
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="contact.html">Contact</a>
-        <a href="references.html">References</a>
-      </nav>
-    </div>
+  <header>
+    <img src="images/logo.png" alt="Nigerian Resort Restaurant Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">Delicious recipes for every taste</h1>
-        <p class="lede">Easy, tested recipes — from quick breakfasts to hearty dinners. Save favorites and come back anytime.</p>
-        <div class="hero-actions">
-          <a href="recipes.html" class="btn">Explore Recipes</a>
-          <button id="favViewBtn" class="btn ghost">View Favorites</button>
-        </div>
-      </div>
-      <figure class="hero-figure" aria-hidden="true">
-        <img src="images/hero.svg" alt="" loading="lazy" />
-      </figure>
+  <main>
+    <section class="hero">
+      <h1>Welcome to Nigerian Resort Restaurant</h1>
+      <p>Authentic Nigerian cuisine served with love.</p>
+      <button id="greetBtn">Greet Me</button>
     </section>
 
-    <!-- Recipe of the day (featured) -->
-    <section class="featured" aria-labelledby="featured-title">
-      <h2 id="featured-title">Recipe of the Day</h2>
-      <div id="featuredCard" class="featured-card" aria-live="polite">
-        <!-- Rendered by JavaScript -->
+    <section class="featured-dishes">
+      <h2>Featured Dishes</h2>
+      <div class="dish-list">
+        <article>
+          <img src="images/dish1.jpg" alt="Jollof Rice" loading="lazy">
+          <h3>Jollof Rice</h3>
+          <p>Spicy, rich, and flavorful rice dish.</p>
+        </article>
+        <article>
+          <img src="images/dish2.jpg" alt="Egusi Soup" loading="lazy">
+          <h3>Egusi Soup</h3>
+          <p>Delicious melon seed soup with meat or fish.</p>
+        </article>
+        <article>
+          <img src="images/dish3.jpg" alt="Pounded Yam" loading="lazy">
+          <h3>Pounded Yam</h3>
+          <p>Perfectly pounded yam to accompany any soup.</p>
+        </article>
       </div>
-    </section>
-
-    <!-- Grid -->
-    <section class="grid-section" aria-labelledby="grid-title">
-      <div class="grid-header">
-        <h2 id="grid-title">All Recipes</h2>
-        <div class="controls">
-          <label for="filter">Filter:</label>
-          <select id="filter" name="filter">
-            <option value="all">All</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Brunch">Brunch</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Drinks">Drinks</option>
-            <option value="Salad">Salad</option>
-          </select>
-        </div>
-      </div>
-
-      <div id="recipeGrid" class="card-grid" aria-live="polite">
-        <!-- Cards injected by JS -->
-      </div>
-    </section>
-
-    <!-- Newsletter / submit name -->
-    <section class="newsletter" aria-labelledby="newsletter-title">
-      <h2 id="newsletter-title">Join the TasteBite community</h2>
-      <p id="welcomeBack" class="muted" aria-live="polite"></p>
-      <form id="nameForm" class="small-form" autocomplete="on">
-        <label for="visitorName">Your name</label>
-        <input id="visitorName" name="visitorName" type="text" minlength="2" required />
-        <button type="submit" class="btn">Save</button>
-      </form>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <p>© 2025 TasteBite — <a href="references.html">References</a></p>
+  <footer>
+    <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
+    <a href="references.html">References</a>
   </footer>
 
-  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-inner" role="document">
-      <button id="closeModal" class="modal-close" aria-label="Close">×</button>
-      <div id="modalContent"></div>
-    </div>
-  </div>
-
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
