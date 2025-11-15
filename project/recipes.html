@@ -1,43 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickChef - Recipes</title>
-    <link rel="stylesheet" href="css/taste.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TasteBite — Recipes</title>
+  <meta name="description" content="All recipes — filter, view details, and save favorites locally." />
+  <link rel="stylesheet" href="css/taste.css" />
 </head>
 <body>
-    <header>
-        <h1>QuickChef</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="TasteBite logo" width="48" height="48" />
+        <span class="brand-title">TasteBite</span>
+      </div>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <h2 style="text-align:center; padding:1rem;">Our Best Recipes</h2>
+  <main id="main">
+    <section class="recipes-intro">
+      <h1>Our Recipes</h1>
+      <p class="lede">Filter, search, and click any recipe for full ingredients and step-by-step directions.</p>
+    </section>
 
-        <div style="text-align:center; margin-bottom:1rem;">
-            <label for="categoryFilter">Filter by Category: </label>
-            <select id="categoryFilter">
-                <option>All</option>
-                <option>Breakfast</option>
-                <option>Lunch</option>
-                <option>Drinks</option>
-            </select>
-        </div>
+    <section class="controls-row">
+      <div>
+        <label for="search">Search</label>
+        <input id="search" type="search" placeholder="search by title or ingredient" />
+      </div>
+      <div>
+        <label for="filter2">Category</label>
+        <select id="filter2">
+          <option value="all">All</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Brunch">Brunch</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Drinks">Drinks</option>
+          <option value="Salad">Salad</option>
+        </select>
+      </div>
+    </section>
 
-        <section class="card-container" id="recipeContainer">
-            <!-- Recipes loaded dynamically via main.js -->
-        </section>
-    </main>
+    <section class="grid-section">
+      <div id="recipeGridPage" class="card-grid" aria-live="polite">
+        <!-- rendered by JS -->
+      </div>
+    </section>
+  </main>
 
-    <footer>
-        <p>© 2025 QuickChef | <a href="references.html" style="color:#f1faee;">References</a></p>
-    </footer>
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 TasteBite — <a href="references.html">References</a></p>
+  </footer>
 
-    <script src="js/main.js"></script>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-inner" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

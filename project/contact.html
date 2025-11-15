@@ -1,48 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickChef - Contact</title>
-    <link rel="stylesheet" href="css/taste.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TasteBite — Contact</title>
+  <meta name="description" content="Contact TasteBite — send recipe ideas or questions." />
+  <link rel="stylesheet" href="css/taste.css" />
 </head>
 <body>
-    <header>
-        <h1>QuickChef</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="TasteBite logo" width="48" height="48" />
+        <span class="brand-title">TasteBite</span>
+      </div>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <h2 style="text-align:center; padding:1rem;">Contact Us</h2>
-        <form onsubmit="saveSubmission(); return false;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
+  <main class="wrapper">
+    <section class="contact-section">
+      <h1>Contact / Submit a Recipe</h1>
+      <p class="lede">Have a family recipe or suggestion? Send it through — we’ll save your submission locally for preview.</p>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+      <form id="recipeForm" novalidate>
+        <div class="form-row">
+          <label for="author">Your Name</label>
+          <input id="author" name="author" type="text" required minlength="2" />
+        </div>
 
-            <label for="category">Favorite Recipe Category:</label>
-            <select id="category">
-                <option>Breakfast</option>
-                <option>Lunch</option>
-                <option>Drinks</option>
-            </select>
+        <div class="form-row">
+          <label for="recipeName">Recipe Name</label>
+          <input id="recipeName" name="recipeName" type="text" required />
+        </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" rows="4" required></textarea>
+        <div class="form-row">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">-- Select --</option>
+            <option>Breakfast</option>
+            <option>Brunch</option>
+            <option>Lunch</option>
+            <option>Drinks</option>
+            <option>Salad</option>
+          </select>
+        </div>
 
-            <input type="submit" value="Submit">
-        </form>
-    </main>
+        <div class="form-row">
+          <label for="ingredients">Ingredients (comma separated)</label>
+          <input id="ingredients" name="ingredients" type="text" required />
+        </div>
 
-    <footer>
-        <p>© 2025 QuickChef | <a href="references.html" style="color:#f1faee;">References</a></p>
-    </footer>
+        <div class="form-row">
+          <label for="steps">Steps (separate by semicolon)</label>
+          <textarea id="steps" name="steps" rows="6" required></textarea>
+        </div>
 
-    <script src="js/main.js"></script>
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit Recipe</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+
+      <div id="formMessage" aria-live="polite" class="muted"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 TasteBite — <a href="references.html">References</a></p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

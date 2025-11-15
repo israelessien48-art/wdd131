@@ -1,51 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickChef - Home</title>
-    <link rel="stylesheet" href="css/taste.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TasteBite — Simple Recipe Book</title>
+  <meta name="description" content="TasteBite — easy, tested recipes. Save favorites, explore step-by-step directions and submit your own recipe." />
+  <link rel="stylesheet" href="css/taste.css" />
 </head>
 <body>
-    <header>
-        <h1>QuickChef</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="images/logo.svg" alt="TasteBite logo" width="48" height="48" />
+        <span class="brand-title">TasteBite</span>
+      </div>
 
-    <section class="hero">
-        <img src="images/hero.jpg" alt="Delicious Food" loading="lazy">
-        <h2>Discover Easy & Delicious Recipes</h2>
-        <p>Simple meals anyone can make at home.</p>
-        <a href="recipes.html"><button>Explore Recipes</button></a>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Delicious recipes for every taste</h1>
+        <p class="lede">Easy, tested recipes — from quick breakfasts to hearty dinners. Save favorites and come back anytime.</p>
+        <div class="hero-actions">
+          <a href="recipes.html" class="btn">Explore Recipes</a>
+          <button id="favViewBtn" class="btn ghost">View Favorites</button>
+        </div>
+      </div>
+      <figure class="hero-figure" aria-hidden="true">
+        <img src="images/hero.svg" alt="" loading="lazy" />
+      </figure>
     </section>
 
-    <section class="card-container">
-        <div class="card">
-            <img src="images/recipe1.jpg" alt="Pancakes" loading="lazy">
-            <h3>Pancakes</h3>
-            <p>Fluffy breakfast pancakes anyone can make.</p>
-            <a href="recipes.html"><button>View Recipe</button></a>
-        </div>
-        <div class="card">
-            <img src="images/recipe2.jpg" alt="Jollof Rice" loading="lazy">
-            <h3>Jollof Rice</h3>
-            <p>A classic West African lunch dish full of flavor.</p>
-            <a href="recipes.html"><button>View Recipe</button></a>
-        </div>
-        <div class="card">
-            <img src="images/recipe3.jpg" alt="Smoothie" loading="lazy">
-            <h3>Smoothie</h3>
-            <p>A refreshing and healthy drink to start your day.</p>
-            <a href="recipes.html"><button>View Recipe</button></a>
-        </div>
+    <!-- Recipe of the day (featured) -->
+    <section class="featured" aria-labelledby="featured-title">
+      <h2 id="featured-title">Recipe of the Day</h2>
+      <div id="featuredCard" class="featured-card" aria-live="polite">
+        <!-- Rendered by JavaScript -->
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 QuickChef | <a href="references.html" style="color: #f1faee;">References</a></p>
-    </footer>
+    <!-- Grid -->
+    <section class="grid-section" aria-labelledby="grid-title">
+      <div class="grid-header">
+        <h2 id="grid-title">All Recipes</h2>
+        <div class="controls">
+          <label for="filter">Filter:</label>
+          <select id="filter" name="filter">
+            <option value="all">All</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Brunch">Brunch</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Salad">Salad</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="recipeGrid" class="card-grid" aria-live="polite">
+        <!-- Cards injected by JS -->
+      </div>
+    </section>
+
+    <!-- Newsletter / submit name -->
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Join the TasteBite community</h2>
+      <p id="welcomeBack" class="muted" aria-live="polite"></p>
+      <form id="nameForm" class="small-form" autocomplete="on">
+        <label for="visitorName">Your name</label>
+        <input id="visitorName" name="visitorName" type="text" minlength="2" required />
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 TasteBite — <a href="references.html">References</a></p>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-inner" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
