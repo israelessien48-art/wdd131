@@ -3,6 +3,7 @@
   --secondary-color: #ffffff;
   --accent-color: #f1f1f1;
   --text-color: #222;
+  --header-height: 70px;
 }
 
 body {
@@ -12,113 +13,163 @@ body {
   color: var(--text-color);
 }
 
-/* --- HEADER FIX (logo top-left, nav to the right) --- */
-header {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 1rem;
-  gap: 2rem;
+  justify-content: space-between;
+  background-color: #006a45;
+  padding: 0 2rem;
+  height: var(--header-height);
 }
-
-header .logo {
-  width: 100px;
-  margin-right: 2rem;
+.site-header .logo {
+  height: 50px;
+  display: block;
 }
-
-nav ul {
+.primary-nav ul {
   display: flex;
   list-style: none;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
-
-nav ul li {
-  margin-left: 1rem;
-}
-
-nav ul li a {
+.primary-nav a {
   color: var(--secondary-color);
   text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+}
+.primary-nav a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+.nav-toggle {
+  display: none;
 }
 
-/* --- CONTENT --- */
-
-main {
-  padding: 2rem;
-}
-
+/* Hero */
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  padding: 3rem 0;
+  background: linear-gradient(180deg, rgba(0,135,81,0.05), transparent);
 }
-
-/* --- FEATURED DISHES FIX (matches image you sent) --- */
-.featured-dishes {
-  text-align: center;
-}
-
-.dish-list {
+.hero-actions {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1rem;
 }
-
-.featured-dishes article {
-  border: 1px solid var(--accent-color);
-  padding: 1rem;
-  width: 230px;
-  text-align: center;
-  background: #fff;
+.btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.6rem 1.2rem;
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
-.featured-dishes img {
+/* Featured Dishes */
+.dish-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.card {
+  width: 240px;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.card img {
   width: 100%;
-  height: 160px; /* same height for all images like screenshot */
+  height: 160px;
   object-fit: cover;
-  border-radius: 4px;
+}
+.card-body {
+  padding: 1rem;
+}
+.card h3 {
+  margin: 0.5rem 0;
+}
+.card p {
+  color: #444;
+  margin: 0.25rem 0;
 }
 
-footer {
+/* Menu List */
+.menu-list {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  background: var(--accent-color);
+}
+.menu-item .name {
+  font-weight: 600;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-form input, .contact-form textarea, .contact-form button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+.form-message {
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin: auto;
-}
-
-input, textarea, button {
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-
-button {
-  background-color: var(--primary-color);
+.site-footer a {
   color: var(--secondary-color);
-  border: none;
-  cursor: pointer;
 }
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  .dish-list {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Responsive */
+@media(max-width:768px) {
+  .primary-nav ul { display: none; }
+  .nav-toggle { display: block; }
+  .dish-grid { flex-direction: column; align-items: center; }
 }

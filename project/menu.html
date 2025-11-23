@@ -1,37 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menu page for Nigerian Resort Restaurant">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Menu — Nigerian Resort Restaurant">
   <title>Menu | Nigerian Resort Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="references.html">References</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><img src="images/logo.png" alt="Logo" class="logo"></a>
+      <button id="navToggleMenu" class="nav-toggle" aria-expanded="false" aria-controls="primaryNavMenu">Menu</button>
+      <nav id="primaryNavMenu" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <h1>Our Menu</h1>
-    <ul id="menuList">
-      <!-- Menu will be populated by JavaScript -->
-    </ul>
+    <section aria-labelledby="menuHeading">
+      <ul id="menuList" class="menu-list" aria-live="polite">
+        <!-- populated by JS -->
+      </ul>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
-    <a href="references.html">References</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
+      <a href="references.html">References</a>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,63 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Israel Essien’s Nigerian Resort Restaurant homepage.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Israel Essien’s Nigerian Resort Restaurant — authentic Nigerian cuisine, responsive site.">
   <title>Home | Nigerian Resort Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="images/logo.png" alt="Nigerian Resort Restaurant Logo" class="logo">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Nigerian Resort Restaurant logo" class="logo">
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+
+      <nav id="primaryNav" class="primary-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="references.html">References</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1>Welcome to Nigerian Resort Restaurant</h1>
-      <p>Authentic Nigerian cuisine served with love.</p>
-      <button id="greetBtn">Greet Me</button>
+      <div class="container hero-inner">
+        <h1>Welcome to Nigerian Resort Restaurant</h1>
+        <p class="lead">Authentic Nigerian cuisine served with care — warm spices, fresh ingredients, and family recipes.</p>
+        <div class="hero-actions">
+          <button id="greetBtn" class="btn">GREET ME</button>
+          <a href="menu.html" class="btn btn-outline">VIEW MENU</a>
+        </div>
+      </div>
     </section>
 
-    <section class="featured-dishes">
-      <h2>Featured Dishes</h2>
-      <div class="dish-list">
-        <article class="dish-card">
-          <img src="images/dish1.jpg" alt="Jollof Rice" loading="lazy">
-          <h3>Jollof Rice</h3>
-          <p>Spicy, rich, and flavorful rice dish.</p>
-        </article>
-
-        <article class="dish-card">
-          <img src="images/dish2.jpg" alt="Egusi Soup" loading="lazy">
-          <h3>Egusi Soup</h3>
-          <p>Delicious melon seed soup with meat or fish.</p>
-        </article>
-
-        <article class="dish-card">
-          <img src="images/dish3.jpg" alt="Pounded Yam" loading="lazy">
-          <h3>Pounded Yam</h3>
-          <p>Perfectly pounded yam to accompany any soup.</p>
-        </article>
+    <section class="featured-dishes container" aria-labelledby="featuredHeading">
+      <h2 id="featuredHeading">Featured Dishes</h2>
+      <div id="featuredList" class="dish-grid" role="list">
+        <!-- JS will render featured cards, images use loading="lazy" -->
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
-    <a href="references.html">References</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
+      <nav aria-label="Footer">
+        <a href="references.html">References</a>
+      </nav>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
