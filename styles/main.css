@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #008751;
+  --primary-color: orange;
   --secondary-color: #ffffff;
-  --accent-color: #f1f1f1;
   --text-color: #222;
 }
 
+/* --- BASE --- */
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -12,161 +12,97 @@ body {
   color: var(--text-color);
 }
 
-/* Header */
+/* --- HEADER --- */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
 }
 
-header img.logo {
+header .logo {
   width: 100px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
   margin: 0;
   padding: 0;
+  gap: 1rem;
 }
 
 nav ul li a {
-  text-decoration: none;
   color: var(--secondary-color);
-  font-weight: 600;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Hero Section */
+/* --- HERO --- */
 .hero {
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
-.hero h1 {
-  margin: 0.5rem 0;
+/* --- FEATURED DISHES --- */
+.featured-dishes {
+  text-align: center;
+  margin: 2rem 1rem;
 }
 
-.hero p {
-  margin-bottom: 1rem;
-}
-
-/* Buttons */
-button, .btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: none;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-/* Featured Dishes */
 .dish-list {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .dish-card {
-  border: 1px solid var(--accent-color);
+  border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
-  width: 250px;
+  width: 220px;
+  padding: 1rem;
   text-align: center;
+  background-color: var(--secondary-color);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .dish-card img {
   width: 100%;
-  height: 160px;
+  height: 150px;
   object-fit: cover;
-}
-
-/* Contact Form */
-form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input, textarea {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Footer */
+.dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* --- FOOTER --- */
 footer {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+footer a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
 
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
   .dish-list {
     flex-direction: column;
     align-items: center;
   }
-}
-/* Featured Dishes */
-.dish-list {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
 
-.dish-card {
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  overflow: hidden;
-  width: 250px;
-  text-align: center;
-  background-color: var(--secondary-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dish-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.dish-card h3 {
-  margin: 0.5rem 0 0.25rem;
-  font-size: 1.1rem;
-}
-
-.dish-card p {
-  margin: 0.25rem 0 0.5rem;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* Hover effect */
-.dish-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.dish-card:hover img {
-  transform: scale(1.05);
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }
