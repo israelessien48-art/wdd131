@@ -1,56 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Contact Nigerian Resort Restaurant" />
-  <title>Contact | Nigerian Resort Restaurant</title>
+  <meta charset="UTF-8">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
-      </div>
-      <nav class="primary-nav" role="navigation" aria-label="Main">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
-          <li><a href="references.html">References</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <h1>Contact Us</h1>
-    <p class="lead">Send us a message and we'll get back to you.</p>
+<header class="site-header">
+  <img src="images/logo.jpg" class="logo" alt="Restaurant Logo">
+  <nav class="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <form id="contactForm" class="contact-form" novalidate>
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" required>
+<section class="container">
+  <h1>Contact Us</h1>
 
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required>
+  <form id="contactForm" class="contact-form">
+    <label>Name:<input type="text" name="name" required></label>
+    <label>Email:<input type="email" name="email" required></label>
+    <label>Message:<textarea name="message" required></textarea></label>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+<footer class="site-footer">
+  © 2025 Israel Essien | Nigerian Resort Restaurant  
+  <br><a href="references.html">References</a>
+</footer>
 
-      <button type="submit" class="btn">SUBMIT</button>
-
-      <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
-    </form>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
-      <p><a href="references.html">References</a></p>
-    </div>
-  </footer>
-
-  <script src="js/main.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>

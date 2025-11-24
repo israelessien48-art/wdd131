@@ -1,45 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Menu — Nigerian Resort Restaurant" />
-  <title>Menu | Nigerian Resort Restaurant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Nigerian Resort Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
-      </div>
-      <nav class="primary-nav" role="navigation" aria-label="Main">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html" aria-current="page">Menu</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="references.html">References</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <h1>Our Menu</h1>
-    <p class="lead">Choose from our popular dishes below.</p>
+<header class="site-header">
+  <img src="images/logo.jpg" class="logo" alt="Restaurant Logo">
+  <nav class="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section id="menuGrid" class="dish-list" aria-live="polite">
-      <!-- JS will populate the card grid here (same layout as homepage) -->
-    </section>
-  </main>
+<section class="container">
+  <h1>Our Menu</h1>
+  <ul id="menuList"></ul>
+</section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
-      <p><a href="references.html">References</a></p>
-    </div>
-  </footer>
+<footer class="site-footer">
+  © 2025 Israel Essien | Nigerian Resort Restaurant <br>
+  <a href="references.html">References</a>
+</footer>
 
-  <script src="js/main.js" defer></script>
+<script src="js/main.js"></script>
 </body>
 </html>
