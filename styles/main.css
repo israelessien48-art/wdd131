@@ -1,178 +1,63 @@
-:root {
-  --primary-color: orange;  /* Header/Footer color */
+:root{
+  --primary-color: #f7931e; /* orange theme */
   --secondary-color: #ffffff;
-  --accent-color: #f1f1f1;
+  --accent-color: #f3efe9;
   --text-color: #222;
   --max-width: 1100px;
 }
 
-* {
-  box-sizing: border-box;
+/* Base */
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--secondary-color);color:var(--text-color);line-height:1.45}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+
+/* Header */
+.site-header{background:var(--primary-color);padding:.8rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 1rem}
+.brand .logo{height:56px;display:block}
+
+/* Navigation */
+.primary-nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.primary-nav a{color:#fff;text-decoration:none;font-weight:600;padding:.35rem .6rem;border-radius:4px}
+.primary-nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* Hero - left text, right image */
+.hero{display:flex;align-items:center;gap:2rem;padding:2.5rem 0}
+.hero-left{flex:1;min-width:240px}
+.hero-right{flex:1;display:flex;justify-content:center}
+.hero-img{max-width:520px;width:100%;height:auto;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.12);}
+
+/* Hero typography */
+.hero-left h1{font-size:2.6rem;margin:0 0 .6rem;color:#fff}
+.hero .lead{font-size:1.1rem;margin:0 0 1rem;color:#fff}
+.hero .btn{background:#fff;color:var(--primary-color);padding:.6rem 1rem;border-radius:6px;border:none;font-weight:700;cursor:pointer}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);padding:.5rem .9rem;border-radius:6px}
+
+/* Featured / menu cards */
+.dish-list{display:flex;flex-wrap:wrap;justify-content:center;gap:1.25rem;padding:1rem 0;margin:0}
+.dish-card{width:250px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,0.08);border:1px solid #eee;text-align:center}
+.dish-card img{width:100%;height:160px;object-fit:cover;display:block}
+.dish-card h3{margin:.6rem 0 .25rem;font-size:1.05rem}
+.dish-card p{margin:0 0 .9rem;color:#444;padding:0 0.6rem}
+
+/* Form */
+.contact-form{max-width:560px;margin:1.5rem auto;display:grid;gap:.8rem}
+.contact-form label{font-weight:700}
+.contact-form input,.contact-form textarea{padding:.6rem;border:1px solid #ddd;border-radius:6px;font-size:1rem}
+.form-message{margin-top:.4rem}
+
+/* Footer */
+.site-footer{background:var(--primary-color);color:#fff;padding:1rem 0;margin-top:2rem;text-align:center}
+.site-footer a{color:#fff;text-decoration:underline}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero{flex-direction:column;align-items:flex-start;padding:1.6rem 0}
+  .hero-left h1{font-size:2rem}
+  .hero-right{order:-1;width:100%;margin-bottom:1rem}
+  .hero-img{max-width:100%}
 }
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  line-height: 1.5;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* --- HEADER --- */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color);
-  padding: 1rem 2rem;
-}
-
-header .logo {
-  width: 100px;
-  height: auto;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: var(--secondary-color);
-  font-weight: 600;
-}
-
-/* --- HERO --- */
-.hero {
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.hero h1 {
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-/* --- BUTTONS --- */
-button, .btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* --- DISH CARDS --- */
-.dish-list,
-#featuredList,
-#menuList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 0;
-  margin: 2rem 0;
-  list-style: none;
-}
-
-.dish-card {
-  background-color: var(--secondary-color);
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  overflow: hidden;
-  border: 1px solid #eee;
-  width: 250px;
-  text-align: center;
-}
-
-.dish-card img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-}
-
-.dish-card h3 {
-  margin: 0.5rem 0;
-}
-
-.dish-card p {
-  margin: 0.25rem 0 1rem 0;
-  color: #444;
-}
-
-/* --- FORM --- */
-.contact-form {
-  max-width: 520px;
-  margin: 2rem auto;
-  display: grid;
-  gap: 0.8rem;
-}
-
-.contact-form label {
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.6rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-
-.form-message {
-  margin-top: 0.5rem;
-  color: green;
-}
-
-/* --- FOOTER --- */
-footer {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-footer a {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .dish-card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
+@media (max-width:480px){
+  .hero-left h1{font-size:1.6rem}
+  .dish-card{width:92%}
 }

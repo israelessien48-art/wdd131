@@ -1,63 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Israel Essien’s Nigerian Resort Restaurant homepage.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Israel Essien’s Nigerian Resort Restaurant — authentic Nigerian cuisine." />
   <title>Home | Nigerian Resort Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="images/logo.png" alt="Nigerian Resort Restaurant Logo" class="logo">
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Israel Essien - Nigerian Resort Restaurant logo" class="logo">
+        </a>
+      </div>
+
+      <nav class="primary-nav" role="navigation" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="references.html">References</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Welcome to Nigerian Resort Restaurant</h1>
-      <p>Authentic Nigerian cuisine served with love.</p>
-      <button id="greetBtn">Greet Me</button>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title">Mixed Tastes, Nigerian Flavour</h1>
+        <p class="lead">Authentic recipes prepared with fresh ingredients — warm, bold and family-inspired.</p>
+        <div class="hero-actions">
+          <button id="greetBtn" class="btn">GREET ME</button>
+          <a href="menu.html" class="btn btn-outline">VIEW MENU</a>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <!-- using the uploaded image path the assistant saved -->
+        <img src="/mnt/data/download.jpg" alt="Assorted dishes - hero image" class="hero-img">
+      </div>
     </section>
 
-    <section class="featured-dishes">
-      <h2>Featured Dishes</h2>
-      <div class="dish-list">
-        <article class="dish-card">
-          <img src="images/dish1.jpg" alt="Jollof Rice" loading="lazy">
-          <h3>Jollof Rice</h3>
-          <p>Spicy, rich, and flavorful rice dish.</p>
-        </article>
-
-        <article class="dish-card">
-          <img src="images/dish2.jpg" alt="Egusi Soup" loading="lazy">
-          <h3>Egusi Soup</h3>
-          <p>Delicious melon seed soup with meat or fish.</p>
-        </article>
-
-        <article class="dish-card">
-          <img src="images/dish3.jpg" alt="Pounded Yam" loading="lazy">
-          <h3>Pounded Yam</h3>
-          <p>Perfectly pounded yam to accompany any soup.</p>
-        </article>
+    <section class="featured container" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Dishes</h2>
+      <div id="featuredList" class="dish-list" role="list">
+        <!-- JS will inject dish cards here using template literals -->
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
-    <a href="references.html">References</a>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
+      <p><a href="references.html">References</a></p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

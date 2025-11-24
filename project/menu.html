@@ -1,45 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Menu — Nigerian Resort Restaurant">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Menu — Nigerian Resort Restaurant" />
   <title>Menu | Nigerian Resort Restaurant</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header>
-    <div class="header-left">
-      <img src="images/logo.png" alt="Nigerian Resort Restaurant Logo" class="logo">
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+      </div>
+      <nav class="primary-nav" role="navigation" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="references.html">References</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Our Menu</h1>
-      <p>Check out our delicious Nigerian dishes below!</p>
-    </section>
+  <main class="container">
+    <h1>Our Menu</h1>
+    <p class="lead">Choose from our popular dishes below.</p>
 
-    <section class="featured-dishes">
-      <div class="dish-list" id="menuList">
-        <!-- JS will populate menu items here -->
-      </div>
+    <section id="menuGrid" class="dish-list" aria-live="polite">
+      <!-- JS will populate the card grid here (same layout as homepage) -->
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
-    <a href="references.html">References</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Israel Essien | Nigerian Resort Restaurant</p>
+      <p><a href="references.html">References</a></p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,58 +1,80 @@
-// main.js — handles greeting, menu, contact form, and featured dishes
+/* js/main.js
+   - Multiple functions
+   - Arrays/objects + methods
+   - Template literals
+   - DOM manipulation and events
+   - localStorage usage
+*/
 
 const menuItems = [
-  { id: 1, name: 'Jollof Rice', price: 12, desc: 'Spicy, rich, and flavorful rice dish.', img: 'images/dish1.jpg' },
-  { id: 2, name: 'Egusi Soup', price: 15, desc: 'Delicious melon seed soup with meat or fish.', img: 'images/dish2.jpg' },
-  { id: 3, name: 'Pounded Yam', price: 10, desc: 'Perfectly pounded yam to accompany any soup.', img: 'images/dish3.jpg' }
+  { id: 1, name: 'Jollof Rice', price: 12, desc: 'Spicy, tomato-based rice with plantain.', img: 'images/dish1.jpg' },
+  { id: 2, name: 'Egusi Soup', price: 15, desc: 'Melon-seed soup served with choice of protein.', img: 'images/dish2.jpg' },
+  { id: 3, name: 'Pounded Yam', price: 10, desc: 'Smooth pounded yam to pair with your soup.', img: 'images/dish3.jpg' }
 ];
 
-// Helper
-const $ = (sel) => document.querySelector(sel);
-const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
 
-// Initialize
 function init() {
-  renderFeatured();
-  renderMenuCards();
+  renderFeaturedCards();
+  renderMenuPage();
   attachHandlers();
-  firstVisitAlert();
+  restoreContactPrefill();
+  firstVisitNotice();
 }
 
-// Render Featured Dishes on homepage
-function renderFeatured() {
-  const featured = $('#featuredList');
-  if(!featured) return;
-  featured.innerHTML = menuItems.map(item => `
-    <article class="dish-card">
+/* Render the featured cards on homepage (if present) */
+function renderFeaturedCards() {
+  const container = $('#featuredList');
+  if(!container) return;
+  container.innerHTML = menuItems.map(item => cardHTML(item)).join('');
+}
+
+/* Render menu page cards (menu.html) */
+function renderMenuPage() {
+  const menuGrid = $('#menuGrid') || $('#menuList') || $('#menuListSection');
+  if(!menuGrid) return;
+  menuGrid.innerHTML = menuItems.map(item => cardHTML(item)).join('');
+}
+
+/* Card template (template literal) */
+function cardHTML(item) {
+  return `
+    <article class="dish-card" role="listitem" data-id="${item.id}">
       <img src="${item.img}" alt="${item.name}" loading="lazy">
       <h3>${item.name}</h3>
       <p>${item.desc}</p>
       <p><strong>$${item.price}</strong></p>
+      <div style="padding:.5rem;">
+        <button class="btn choose" data-id="${item.id}">Choose</button>
+      </div>
     </article>
-  `).join('');
+  `;
 }
 
-// Render Menu page cards
-function renderMenuCards() {
-  const menuList = $('#menuList');
-  if(!menuList) return;
-  menuList.innerHTML = menuItems.map(item => `
-    <article class="dish-card">
-      <img src="${item.img}" alt="${item.name}" loading="lazy">
-      <h3>${item.name}</h3>
-      <p>${item.desc}</p>
-      <p><strong>$${item.price}</strong></p>
-    </article>
-  `).join('');
+/* Handle choose button */
+function handleChoose(e) {
+  const btn = e.target.closest('.choose');
+  if(!btn) return;
+  const id = Number(btn.dataset.id);
+  const item = menuItems.find(m => m.id === id);
+  if(!item) return;
+  localStorage.setItem('preferredDish', JSON.stringify(item));
+  alert(`${item.name} saved as your preferred dish.`);
 }
 
-// Greet button
+/* Greet user */
 function handleGreet() {
   const name = prompt('Enter your name:');
-  alert(`Welcome to Nigerian Resort, ${name ? name : "Guest"}!`);
+  if(name && name.trim().length) {
+    localStorage.setItem('visitorName', name.trim());
+    alert(`Welcome to Nigerian Resort, ${name.trim()}!`);
+  } else {
+    alert('Welcome to Nigerian Resort, Guest!');
+  }
 }
 
-// Contact Form submission
+/* Contact form submission */
 function handleFormSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -60,35 +82,67 @@ function handleFormSubmit(e) {
   const email = form.email.value.trim();
   const message = form.message.value.trim();
 
-  if(!name || !email || !message){
-    $('#formMessage').textContent = 'Please fill out all fields.';
-    $('#formMessage').style.color = 'red';
+  if(!name || !email || !message) {
+    showFormMessage('Please complete all fields.', true);
+    return;
+  }
+  if(!email.includes('@')) {
+    showFormMessage('Please enter a valid email address.', true);
     return;
   }
 
-  localStorage.setItem('lastContact', JSON.stringify({ name, email, message, date: new Date() }));
-  $('#formMessage').textContent = `Thank you, ${name}! Your message has been sent.`;
-  $('#formMessage').style.color = 'green';
+  const obj = { name, email, message, date: new Date().toISOString() };
+  localStorage.setItem('lastContact', JSON.stringify(obj));
+  showFormMessage(`Thank you, ${name}! We'll be in touch.`, false);
   form.reset();
 }
 
-// Attach event handlers
+/* Show form message */
+function showFormMessage(txt, isError) {
+  const el = $('#formMessage');
+  if(!el) return;
+  el.textContent = txt;
+  el.style.color = isError ? 'crimson' : 'green';
+}
+
+/* Restore contact form prefill from localStorage */
+function restoreContactPrefill() {
+  const raw = localStorage.getItem('lastContact');
+  if(!raw) return;
+  try {
+    const data = JSON.parse(raw);
+    const form = $('#contactForm');
+    if(form) {
+      form.name.value = data.name || '';
+      form.email.value = data.email || '';
+    }
+  } catch(e) { /* ignore */ }
+}
+
+/* Set up event listeners */
 function attachHandlers() {
   $('#greetBtn')?.addEventListener('click', handleGreet);
+  $$('.choose').forEach(btn => btn.addEventListener('click', handleChoose));
+  $('#menuGrid')?.addEventListener('click', handleChoose);
+  $('#menuList')?.addEventListener('click', handleChoose);
+  $('#menuGrid')?.addEventListener('click', handleChoose);
   $('#contactForm')?.addEventListener('submit', handleFormSubmit);
 }
 
-// First time visit alert
-function firstVisitAlert() {
-  if(!localStorage.getItem('visited')){
+/* First visit alert (localStorage flag) */
+function firstVisitNotice() {
+  if(!localStorage.getItem('visited')) {
     alert('Welcome to our restaurant website for the first time!');
-    localStorage.setItem('visited', 'true');
+    localStorage.setItem('visited','true');
   }
 }
 
-// Init on DOM ready
-if(document.readyState === 'loading'){
+/* Initialize when DOM ready */
+if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
-}else{
+} else {
   init();
 }
+
+/* Expose for debugging (optional) */
+window.__NigerianResort = { menuItems };
