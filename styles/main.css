@@ -168,3 +168,35 @@ footer a:hover {
         font-size: 1.8rem;
     }
 }
+/* ==========================
+   Header Title
+========================== */
+header h1 {
+    color: #FF6B35; /* Warm Orange */
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================
+   Footer
+========================== */
+footer {
+    background-color: #073B4C; /* Dark Blue */
+    color: #FFD166; /* Golden Yellow */
+    text-align: center;
+    padding: 1.5rem 0;
+    font-weight: bold;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.1);
+}
+
+footer a {
+    color: #06D6A0; /* Fresh Green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #FF6B35; /* Warm Orange */
+}
