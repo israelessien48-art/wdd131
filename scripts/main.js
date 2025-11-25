@@ -5,31 +5,64 @@ const recipes = [
     { name: 'Suya', category: 'Dinner', ingredients: ['Beef', 'Spices', 'Oil'], instructions: 'Skewer and grill beef with spice mix.' }
 ];
 
-// Display dishes on homepage
 document.addEventListener('DOMContentLoaded', () => {
-    const dishContainer = document.getElementById('dishCards');
-    recipes.forEach(dish => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <img src="images/dish${recipes.indexOf(dish)+1}.jpg" alt="${dish.name}">
-            <h3>${dish.name}</h3>
-            <p><strong>Category:</strong> ${dish.category}</p>
-            <p>${dish.instructions}</p>
-        `;
-        dishContainer.appendChild(card);
-    });
+    displayRecipes('All');
 
-    // Reservation form
-    const form = document.getElementById('reservationForm');
-    if(form){
-        form.addEventListener('submit', (e) => {
+    const reservationForm = document.getElementById('reservationForm');
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('name').value;
             const guests = document.getElementById('guests').value;
             const date = document.getElementById('date').value;
             alert(`Thank you ${name}! Your reservation for ${guests} guest(s) on ${date} is confirmed.`);
-            form.reset();
+            reservationForm.reset();
+        });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you ${name}! Your message has been sent.`);
+            contactForm.reset();
         });
     }
 });
+
+function displayRecipes(category) {
+    const container = document.getElementById('recipeList');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const filtered = category === 'All' ? recipes : recipes.filter(r => r.category === category);
+
+    filtered.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${recipe.name}</h3>
+            <p><strong>Category:</strong> ${recipe.category}</p>
+            <p><strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}</p>
+            <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+            <button onclick="addFavorite('${recipe.name}')">Add to Favorites</button>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function filterRecipes(category) {
+    displayRecipes(category);
+}
+
+function addFavorite(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (!favorites.includes(recipeName)) {
+        favorites.push(recipeName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert(`${recipeName} added to favorites!`);
+    } else {
+        alert(`${recipeName} is already in favorites.`);
+    }
+}

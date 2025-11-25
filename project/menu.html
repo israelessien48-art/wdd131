@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Israel Essien | Menu</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Nigerian Resort Restaurant</h1>
+        <h1 class="title">Israel Essien's Nigerian Resort Restaurant</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -23,21 +22,19 @@
     <main>
         <section class="filter">
             <h2>Filter Recipes</h2>
-            <div style="text-align:center; margin-bottom:2rem;">
-                <button onclick="filterRecipes('All')">All</button>
-                <button onclick="filterRecipes('Breakfast')">Breakfast</button>
-                <button onclick="filterRecipes('Lunch')">Lunch</button>
-                <button onclick="filterRecipes('Dinner')">Dinner</button>
-            </div>
+            <button onclick="filterRecipes('All')">All</button>
+            <button onclick="filterRecipes('Breakfast')">Breakfast</button>
+            <button onclick="filterRecipes('Lunch')">Lunch</button>
+            <button onclick="filterRecipes('Dinner')">Dinner</button>
         </section>
 
-        <section class="recipe-cards" id="recipeList">
-            <!-- Recipes will be dynamically generated here -->
-        </section>
+        <section class="recipe-list" id="recipeList"></section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
+        <p class="footer-text">&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>

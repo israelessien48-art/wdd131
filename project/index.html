@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Israel Essien's Nigerian Resort Restaurant showcasing traditional Nigerian cuisines.">
     <title>Israel Essien | Nigerian Resort Restaurant</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1>Israel Essien's Nigerian Resort Restaurant</h1>
+        <h1 class="title">Israel Essien's Nigerian Resort Restaurant</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -21,22 +20,33 @@
         </nav>
     </header>
 
-    <!-- Intro Section -->
     <main>
         <section class="intro">
             <h2>Welcome!</h2>
             <p>Experience the rich flavors of Nigeria at our resort restaurant. From traditional Jollof Rice to Egusi Soup, enjoy authentic Nigerian dishes prepared with love and tradition.</p>
         </section>
 
-        <!-- Featured Dishes -->
         <section class="featured-dishes">
             <h2>Featured Dishes</h2>
-            <div class="dish-cards" id="dishCards">
-                <!-- Dish cards will appear horizontally -->
+            <div class="dish-cards">
+                <div class="card">
+                    <img src="images/dish1.jpg" alt="Jollof Rice" loading="lazy">
+                    <h3>Jollof Rice</h3>
+                    <p>A classic West African rice dish cooked in tomato sauce with spices.</p>
+                </div>
+                <div class="card">
+                    <img src="images/dish2.jpg" alt="Egusi Soup" loading="lazy">
+                    <h3>Egusi Soup</h3>
+                    <p>Hearty soup made with melon seeds, vegetables, and meat.</p>
+                </div>
+                <div class="card">
+                    <img src="images/dish3.jpg" alt="Pounded Yam" loading="lazy">
+                    <h3>Pounded Yam</h3>
+                    <p>Enjoy with Egusi Soup or your favorite Nigerian soup.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Reservation Form -->
         <section class="reservation-form">
             <h2>Reserve a Table</h2>
             <form id="reservationForm">
@@ -57,9 +67,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
+        <p class="footer-text">&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
     </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
