@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #FF6B35;   /* Warm orange */
-    --secondary-color: #FFD166; /* Golden yellow */
-    --accent-color: #06D6A0;    /* Fresh green */
-    --text-color: #073B4C;
+    --primary-color: #FF6B35;   /* Orange */
+    --secondary-color: #FFD166; /* Yellow */
+    --accent-color: #06D6A0;    /* Green */
+    --text-color: #333;
     --background-color: #fff8f0;
     --footer-color: #073B4C;
 }
@@ -11,22 +11,21 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-/* ========== HEADER ========== */
+/* Header */
 header {
     background: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1.5rem 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    margin: 0 0 1rem 0;
+    margin: 0;
     font-size: 2rem;
     color: var(--secondary-color);
 }
@@ -34,7 +33,7 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0.5rem 0 0;
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -42,38 +41,39 @@ nav ul {
 
 nav a {
     color: white;
-    font-weight: bold;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    font-weight: bold;
 }
 
 nav a:hover {
     color: var(--accent-color);
 }
 
-/* ========== MAIN ========== */
-main {
-    padding: 2rem 1rem;
+/* Intro */
+.intro {
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
 }
 
-/* ========== CARDS ========== */
-.recipe-cards,
+/* Dish Cards Horizontal Layout */
 .dish-cards {
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
+    gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .card {
-    background-color: white;
+    width: 260px;
+    background: white;
     border-radius: 12px;
     overflow: hidden;
-    width: 250px;
-    text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -94,28 +94,11 @@ main {
 }
 
 .card p {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 0.8rem 0.8rem 0.8rem;
     font-size: 0.95rem;
 }
 
-/* ========== BUTTONS ========== */
-button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
-    border-radius: 6px;
-    margin: 0.3rem;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-}
-
-/* ========== FORMS ========== */
+/* Forms */
 form {
     max-width: 500px;
     margin: 1rem auto 2rem auto;
@@ -124,7 +107,7 @@ form {
     gap: 1rem;
 }
 
-input, select, textarea {
+input, textarea {
     padding: 0.6rem 0.8rem;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -132,71 +115,47 @@ input, select, textarea {
     width: 100%;
 }
 
-/* ========== FOOTER ========== */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Footer */
 footer {
     background-color: var(--footer-color);
-    color: white;
+    color: var(--secondary-color);
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 3rem;
-    font-weight: bold;
+    margin-top: 2rem;
 }
 
 footer a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
-/* ========== RESPONSIVE ========== */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .recipe-cards,
     .dish-cards {
         flex-direction: column;
         align-items: center;
     }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-}
-/* ==========================
-   Header Title
-========================== */
-header h1 {
-    color: #FF6B35; /* Warm Orange */
-    text-align: center;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 0.5rem;
-}
-
-/* ==========================
-   Footer
-========================== */
-footer {
-    background-color: #073B4C; /* Dark Blue */
-    color: #FFD166; /* Golden Yellow */
-    text-align: center;
-    padding: 1.5rem 0;
-    font-weight: bold;
-    box-shadow: 0 -3px 6px rgba(0,0,0,0.1);
-}
-
-footer a {
-    color: #06D6A0; /* Fresh Green */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #FF6B35; /* Warm Orange */
 }
