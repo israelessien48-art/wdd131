@@ -1,20 +1,16 @@
-/* ==========================
-   General Styles
-========================== */
 :root {
-    --primary-color: #FF6B35;   /* Warm orange */
-    --secondary-color: #FFD166; /* Golden yellow */
-    --accent-color: #06D6A0;    /* Fresh green */
-    --text-color: #333;
-    --background-color: #fff8f0;
-    --footer-color: #073B4C;
+    --primary-color: #FF6B35;   /* Warm orange for header/title */
+    --secondary-color: #FFD166; /* Yellow accent */
+    --accent-color: #06D6A0;    /* Green buttons */
+    --text-color: #073B4C;      /* Dark text */
+    --background-color: #fff8f0;/* Light background */
+    --footer-color: #073B4C;    /* Dark footer */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -22,14 +18,15 @@ body {
 header {
     background: var(--primary-color);
     color: white;
-    padding: 1.5rem 0;
     text-align: center;
+    padding: 1.5rem 1rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
+    color: var(--secondary-color);
 }
 
 nav ul {
@@ -52,19 +49,18 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* ==========================
-   Main Content
-========================== */
 main {
     padding: 2rem 1rem;
 }
 
+/* Section Titles */
 h2 {
     text-align: center;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
+/* Intro Section */
 .intro p {
     max-width: 800px;
     margin: 0 auto 2rem auto;
@@ -72,9 +68,7 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* ==========================
-   Dish / Recipe Cards
-========================== */
+/* Dish / Recipe Cards */
 .dish-cards,
 .recipe-cards {
     display: flex;
@@ -84,7 +78,7 @@ h2 {
 }
 
 .card {
-    background: #fff;
+    background: white;
     border-radius: 12px;
     overflow: hidden;
     width: 260px;
@@ -114,9 +108,7 @@ h2 {
     font-size: 0.95rem;
 }
 
-/* ==========================
-   Buttons
-========================== */
+/* Buttons */
 button {
     background-color: var(--accent-color);
     color: white;
@@ -133,9 +125,7 @@ button:hover {
     color: var(--text-color);
 }
 
-/* ==========================
-   Forms
-========================== */
+/* Forms */
 form {
     max-width: 500px;
     margin: 1rem auto 2rem auto;
@@ -165,9 +155,7 @@ button[type="submit"]:hover {
     color: white;
 }
 
-/* ==========================
-   Footer
-========================== */
+/* Footer */
 footer {
     background-color: var(--footer-color);
     color: white;
@@ -185,9 +173,7 @@ footer a:hover {
     color: var(--accent-color);
 }
 
-/* ==========================
-   Responsive
-========================== */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -200,7 +186,7 @@ footer a:hover {
         align-items: center;
     }
 
-    h1 {
+    header h1 {
         font-size: 1.8rem;
     }
 }

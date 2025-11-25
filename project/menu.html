@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Israel Essien | Menu</title>
-    <link rel="stylesheet" href="styles/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Israel Essien | Menu</title>
+<link rel="stylesheet" href="styles/main.css">
+<script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Nigerian Resort Restaurant</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Nigerian Resort Restaurant</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <section class="filter" style="text-align:center; margin:2rem 0;">
-            <h2>Filter Recipes</h2>
-            <button onclick="filterRecipes('All')">All</button>
-            <button onclick="filterRecipes('Breakfast')">Breakfast</button>
-            <button onclick="filterRecipes('Lunch')">Lunch</button>
-            <button onclick="filterRecipes('Dinner')">Dinner</button>
-        </section>
+<main>
+    <section class="filter" style="text-align:center; margin:2rem 0; background-color:#FFD166; padding:1.5rem; border-radius:12px;">
+        <h2>Filter Recipes</h2>
+        <button onclick="filterRecipes('All')">All</button>
+        <button onclick="filterRecipes('Breakfast')">Breakfast</button>
+        <button onclick="filterRecipes('Lunch')">Lunch</button>
+        <button onclick="filterRecipes('Dinner')">Dinner</button>
+    </section>
 
-        <section class="recipe-list" id="recipeList">
-            <!-- Recipes will be dynamically generated here -->
-        </section>
-    </main>
+    <section class="recipe-list" id="recipeList">
+        <!-- Recipes will be dynamically generated here by main.js -->
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
-    </footer>
-
-    <script src="scripts/main.js"></script>
+<footer>
+<p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
+</footer>
 </body>
 </html>
