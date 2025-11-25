@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #FF6B35;
-    --secondary-color: #FFD166;
-    --accent-color: #06D6A0;
-    --text-color: #333;
-    --background-color: #fff8f0;
-    --footer-color: #073B4C;
+    --primary-color: #FF6B35;   /* Warm orange for headers */
+    --secondary-color: #FFD166; /* Golden yellow for highlights */
+    --accent-color: #06D6A0;    /* Fresh green for buttons */
+    --text-color: #333;         /* Dark text for readability */
+    --background-color: #fff8f0; /* Soft background */
+    --footer-color: #073B4C;     /* Dark blue footer */
 }
 
+/* ===== Body ===== */
 body {
     margin: 0;
     padding: 0;
@@ -15,15 +16,16 @@ body {
     color: var(--text-color);
 }
 
+/* ===== Header ===== */
 header {
     background-color: var(--primary-color);
-    color: white;
     text-align: center;
     padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1.title {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Colored title */
     font-size: 2.2rem;
     margin: 0;
 }
@@ -41,12 +43,14 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: var(--accent-color);
 }
 
+/* ===== Main Sections ===== */
 main {
     padding: 2rem 1rem;
 }
@@ -58,8 +62,15 @@ main {
     margin: 1rem auto;
     max-width: 900px;
     text-align: center;
+    color: var(--text-color);
 }
 
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* ===== Cards ===== */
 .dish-cards, .recipe-cards {
     display: flex;
     justify-content: center;
@@ -86,6 +97,7 @@ main {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    border-bottom: 4px solid var(--primary-color); /* color border under image */
 }
 
 .card h3 {
@@ -93,6 +105,12 @@ main {
     color: var(--primary-color);
 }
 
+.card p {
+    padding: 0 0.8rem 0.8rem 0.8rem;
+    font-size: 0.95rem;
+}
+
+/* ===== Buttons ===== */
 button {
     background-color: var(--accent-color);
     color: white;
@@ -101,6 +119,8 @@ button {
     padding: 0.6rem 1.2rem;
     cursor: pointer;
     margin: 0.3rem;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -108,6 +128,7 @@ button:hover {
     color: var(--text-color);
 }
 
+/* ===== Footer ===== */
 footer {
     background-color: var(--footer-color);
     color: var(--secondary-color);
@@ -124,6 +145,7 @@ footer a:hover {
     color: var(--secondary-color);
 }
 
+/* ===== References list ===== */
 .references-list {
     max-width: 800px;
     margin: 2rem auto;
@@ -131,8 +153,10 @@ footer a:hover {
     padding: 2rem;
     border-radius: 12px;
     list-style: disc inside;
+    color: var(--footer-color);
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
