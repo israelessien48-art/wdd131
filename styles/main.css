@@ -1,182 +1,97 @@
+/* ===== ROOT COLORS ===== */
 :root {
-  --primary-color: #ff7b00; /* Bright appealing orange */
-  --secondary-color: #ffffff;
-  --accent-color: #f1f1f1;
-  --text-color: #222;
-  --header-height: 70px;
+    --primary: #008751;
+    --dark: #222;
+    --light: #fff;
+    --card-bg: #f4f4f4;
+    --accent: #e5e5e5;
 }
 
+/* ===== BASE ===== */
 body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* ===== HEADER ===== */
+header {
+    background: var(--primary);
+    color: var(--light);
+    padding: 1rem;
+    text-align: center;
 }
 
-/* Header */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color);
-  padding: 0 2rem;
-  height: var(--header-height);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
 }
 
-.site-header .logo {
-  height: 55px;
-  width: auto;
-  border-radius: 8px;
+header nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.primary-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
+header nav a.active {
+    text-decoration: underline;
 }
 
-.primary-nav a {
-  color: var(--secondary-color);
-  text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 5px;
-  font-weight: 600;
-}
-
-.primary-nav a:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-
-.nav-toggle {
-  display: none;
-}
-
-/* Hero */
+/* ===== HERO SECTION ===== */
 .hero {
-  text-align: center;
-  padding: 3rem 0;
-  background: linear-gradient(180deg, rgba(255,123,0,0.15), transparent);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
 }
 
-.hero-actions {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.hero img {
+    width: 45%;
+    border-radius: 10px;
 }
 
 .btn {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+    display: inline-block;
+    padding: .7rem 1.2rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-/* Featured Dishes */
-.dish-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1.5rem;
+/* ===== MENU CARDS ===== */
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .card {
-  width: 240px;
-  border: 1px solid var(--accent-color);
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: var(--secondary-color);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
 }
 
-.card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.card button {
+    margin-top: .5rem;
+    width: 100%;
+    padding: .6rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-.card-body {
-  padding: 1rem;
-}
-
-.card h3 {
-  margin: 0.5rem 0;
-}
-
-.card p {
-  color: #444;
-  margin: 0.25rem 0;
-}
-
-/* Footer */
-.site-footer {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-weight: 600;
-}
-
-.site-footer a { 
-  color: var(--secondary-color); 
-  text-decoration: underline;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 500px;
-  margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form button {
-  padding: 0.65rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.contact-form button {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .primary-nav ul { display: none; }
-  .nav-toggle { display: block; }
-
-  .dish-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+/* ===== FOOTER ===== */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: .7rem;
+    margin-top: 2rem;
 }

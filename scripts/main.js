@@ -1,37 +1,67 @@
-// Greet Button
-document.getElementById('greetBtn')?.addEventListener('click', () => {
-    const name = prompt("Enter your name:");
-    alert(`Welcome to Nigerian Resort, ${name || "Guest"}!`);
-});
-
-// Menu Items Object & Array
-const menuItems = [
-    { name: "Jollof Rice", price: 12 },
-    { name: "Egusi Soup", price: 15 },
-    { name: "Pounded Yam", price: 10 }
+// Nigerian Menu Data
+const recipes = [
+    {
+        name: 'Jollof Rice',
+        category: 'Lunch',
+        ingredients: ['Rice', 'Tomato', 'Onion', 'Spices'],
+        instructions: 'Cook rice with tomato stew and spices.'
+    },
+    {
+        name: 'Egusi Soup',
+        category: 'Dinner',
+        ingredients: ['Melon Seeds', 'Spinach', 'Meat'],
+        instructions: 'Cook melon seeds with spinach and assorted meat.'
+    },
+    {
+        name: 'Akara',
+        category: 'Breakfast',
+        ingredients: ['Beans', 'Onion', 'Salt', 'Oil'],
+        instructions: 'Blend beans with onion and fry until golden.'
+    },
+    {
+        name: 'Suya',
+        category: 'Dinner',
+        ingredients: ['Beef', 'Spices', 'Oil'],
+        instructions: 'Season beef with suya spice and grill.'
+    }
 ];
 
-// Populate Menu Page
-const menuList = document.getElementById('menuList');
-if(menuList){
-    menuItems.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - $${item.price}`;
-        menuList.appendChild(li);
+// Load recipes
+document.addEventListener('DOMContentLoaded', () => displayRecipes('All'));
+
+function displayRecipes(category) {
+    const container = document.getElementById('recipeList');
+    container.innerHTML = '';
+
+    const filtered =
+        category === 'All'
+            ? recipes
+            : recipes.filter(r => r.category === category);
+
+    filtered.forEach(recipe => {
+        container.innerHTML += `
+        <div class="card">
+            <h3>${recipe.name}</h3>
+            <p><strong>Category:</strong> ${recipe.category}</p>
+            <p><strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}</p>
+            <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+            <button onclick="addFavorite('${recipe.name}')">Add to Favorites</button>
+        </div>`;
     });
 }
 
-// Form Submission
-const contactForm = document.getElementById('contactForm');
-contactForm?.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = this.name.value;
-    alert(`Thank you, ${name}! Your message has been sent.`);
-    localStorage.setItem('lastContact', new Date().toLocaleDateString());
-});
+function filterRecipes(category) {
+    displayRecipes(category);
+}
 
-// Conditional localStorage
-if(!localStorage.getItem('visited')){
-    alert("Welcome to our restaurant website for the first time!");
-    localStorage.setItem('visited', true);
+function addFavorite(recipeName) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    if (!favorites.includes(recipeName)) {
+        favorites.push(recipeName);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        alert(`${recipeName} added to favorites!`);
+    } else {
+        alert(`${recipeName} is already in favorites.`);
+    }
 }

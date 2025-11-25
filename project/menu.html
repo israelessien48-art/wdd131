@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu - Nigerian Resort Restaurant</title>
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israel Essien | Menu</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <header>
+        <h1>Nigerian Menu Selection</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header class="site-header">
-  <img src="images/logo.jpg" class="logo" alt="Restaurant Logo">
-  <nav class="primary-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="references.html">References</a></li>
-    </ul>
-  </nav>
-</header>
+    <main>
+        <section class="filter">
+            <h2>Filter Menu</h2>
+            <button onclick="filterRecipes('All')">All</button>
+            <button onclick="filterRecipes('Breakfast')">Breakfast</button>
+            <button onclick="filterRecipes('Lunch')">Lunch</button>
+            <button onclick="filterRecipes('Dinner')">Dinner</button>
+        </section>
 
-<section class="container">
-  <h1>Our Menu</h1>
-  <ul id="menuList"></ul>
-</section>
+        <section class="recipe-list" id="recipeList">
+            <!-- Dynamic Menu Items -->
+        </section>
+    </main>
 
-<footer class="site-footer">
-  © 2025 Israel Essien | Nigerian Resort Restaurant <br>
-  <a href="references.html">References</a>
-</footer>
+    <footer>
+        <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
+    </footer>
 
-<script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
