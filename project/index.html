@@ -4,31 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Israel Essien | Nigerian Resort Restaurant</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>Israel Essien’s Nigerian Resort Restaurant</h1>
-        <nav>
+    <header class="header-container">
+        <div class="header-text">
+            <h1>Israel Essien's Nigerian Resort Restaurant</h1>
+        </div>
+        <nav class="vertical-nav">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="references.html">References</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="hero">
-        <section>
-            <h2>Welcome to the Taste of Nigeria</h2>
-            <p>Enjoy authentic Nigerian cuisines prepared with passion and tradition.</p>
-            <a href="menu.html" class="btn">View Menu</a>
+    <main>
+        <section class="intro">
+            <h2>Welcome!</h2>
+            <p>Experience the rich flavors of Nigeria at our resort restaurant. From traditional Jollof Rice to Egusi Soup, enjoy authentic Nigerian dishes prepared with love and tradition.</p>
         </section>
-        <img src="images/hero.jpg" alt="Nigerian Food">
-    </main>
 
-    <footer>
-        <p>&copy; 2025 Israel Essien | Nigerian Resort Restaurant</p>
-    </footer>
+        <section class="featured-dishes">
+            <h2>Featured Dishes</h2>
+            <div class="dish-cards">
+                <div class="card">
+                    <img src="images/dish1.jpg" alt="Jollof Rice">
+                    <h3>Jollof Rice</h3>
+                    <p>A classic West African rice dish cooked in tomato sauce with spices.</p>
+                </div>
+                <div class="card">
+                    <img src="images/dish2.jpg" alt="Egusi Soup">
+                    <h3>Egusi Soup</h3>
+                    <p>Hearty soup made with melon seeds, vegetables, and meat.</p>
+                </div>
+                <div class="card">
+                    <img src="images/dish3.jpg" alt="Pounded Yam">
+                    <h3>Pounded Yam</h3>
+                    <p>Enjoy with Egusi soup or any of your choice.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
