@@ -1,41 +1,38 @@
 :root {
-    --primary-color: #FF6B35;   /* Warm orange for headers */
-    --secondary-color: #FFD166; /* Golden yellow for highlights */
-    --accent-color: #06D6A0;    /* Fresh green for buttons */
-    --text-color: #333;         /* Dark text for readability */
-    --background-color: #fff8f0; /* Soft background */
-    --footer-color: #073B4C;     /* Dark blue footer */
+    --primary-color: #FF6B35;   /* Orange for titles */
+    --secondary-color: #FFD166; /* Yellow accents */
+    --accent-color: #06D6A0;    /* Green buttons */
+    --text-color: #333;
+    --background-color: #fff8f0;
+    --footer-color: #073B4C;
 }
 
-/* ===== Body ===== */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-/* ===== Header ===== */
 header {
     background-color: var(--primary-color);
+    color: white;
     text-align: center;
     padding: 1.5rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-header h1.title {
-    color: var(--secondary-color); /* Colored title */
-    font-size: 2.2rem;
+header h1 {
+    color: #FFD166;
     margin: 0;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
     gap: 2rem;
+    padding: 0;
     margin-top: 0.5rem;
 }
 
@@ -43,61 +40,44 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: var(--accent-color);
 }
 
-/* ===== Main Sections ===== */
 main {
     padding: 2rem 1rem;
 }
 
-.intro, .reservation-form, .contact-section {
-    background-color: var(--secondary-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 900px;
-    text-align: center;
-    color: var(--text-color);
-}
-
 h2 {
+    text-align: center;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-/* ===== Cards ===== */
-.dish-cards, .recipe-cards {
+/* Dish Cards */
+.dish-cards,
+.recipe-cards {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
-    margin-top: 1rem;
 }
 
 .card {
-    background-color: #fff;
-    width: 260px;
+    background: #fff;
     border-radius: 12px;
+    overflow: hidden;
+    width: 250px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-bottom: 4px solid var(--primary-color); /* color border under image */
 }
 
 .card h3 {
@@ -106,21 +86,19 @@ h2 {
 }
 
 .card p {
-    padding: 0 0.8rem 0.8rem 0.8rem;
     font-size: 0.95rem;
+    padding: 0 0.8rem 0.8rem 0.8rem;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 button {
     background-color: var(--accent-color);
     color: white;
     border: none;
-    border-radius: 6px;
     padding: 0.6rem 1.2rem;
     cursor: pointer;
+    border-radius: 6px;
     margin: 0.3rem;
-    font-weight: bold;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -128,44 +106,53 @@ button:hover {
     color: var(--text-color);
 }
 
-/* ===== Footer ===== */
+/* Forms */
+form {
+    max-width: 500px;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, select, textarea {
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input[type="submit"], button[type="submit"] {
+    font-weight: bold;
+}
+
+/* Footer */
 footer {
     background-color: var(--footer-color);
-    color: var(--secondary-color);
+    color: #FFD166;
     text-align: center;
     padding: 1.5rem 0;
+    margin-top: 2rem;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
-/* ===== References list ===== */
-.references-list {
-    max-width: 800px;
-    margin: 2rem auto;
-    background-color: var(--accent-color);
-    padding: 2rem;
-    border-radius: 12px;
-    list-style: disc inside;
-    color: var(--footer-color);
-}
-
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
     }
-    .dish-cards, .recipe-cards {
+
+    .dish-cards,
+    .recipe-cards {
         flex-direction: column;
         align-items: center;
-    }
-    header h1.title {
-        font-size: 1.8rem;
     }
 }

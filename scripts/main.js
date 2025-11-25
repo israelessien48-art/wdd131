@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     displayRecipes('All');
 
     const reservationForm = document.getElementById('reservationForm');
-    if (reservationForm) {
-        reservationForm.addEventListener('submit', (e) => {
+    if(reservationForm){
+        reservationForm.addEventListener('submit', e=>{
             e.preventDefault();
             const name = document.getElementById('name').value;
             const guests = document.getElementById('guests').value;
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    if(contactForm){
+        contactForm.addEventListener('submit', e=>{
             e.preventDefault();
             const name = document.getElementById('name').value;
             alert(`Thank you ${name}! Your message has been sent.`);
@@ -31,38 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function displayRecipes(category) {
+function displayRecipes(category){
     const container = document.getElementById('recipeList');
-    if (!container) return;
-    container.innerHTML = '';
-
-    const filtered = category === 'All' ? recipes : recipes.filter(r => r.category === category);
-
-    filtered.forEach(recipe => {
+    if(!container) return;
+    container.innerHTML='';
+    const filtered = category === 'All' ? recipes : recipes.filter(r=>r.category===category);
+    filtered.forEach(recipe=>{
         const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
+        card.className='card';
+        card.innerHTML=`
             <h3>${recipe.name}</h3>
             <p><strong>Category:</strong> ${recipe.category}</p>
             <p><strong>Ingredients:</strong> ${recipe.ingredients.join(', ')}</p>
             <p><strong>Instructions:</strong> ${recipe.instructions}</p>
-            <button onclick="addFavorite('${recipe.name}')">Add to Favorites</button>
         `;
         container.appendChild(card);
     });
 }
 
-function filterRecipes(category) {
+function filterRecipes(category){
     displayRecipes(category);
-}
-
-function addFavorite(recipeName) {
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    if (!favorites.includes(recipeName)) {
-        favorites.push(recipeName);
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        alert(`${recipeName} added to favorites!`);
-    } else {
-        alert(`${recipeName} is already in favorites.`);
-    }
 }
