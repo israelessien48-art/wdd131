@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Menu — Israel Essien's Nigerian Resort Restaurant. Filter dishes and view details." />
+  <meta name="description" content="Menu — Israel Essien's Nigerian Resort Restaurant" />
   <title>Israel Essien | Menu</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -23,14 +23,16 @@
   <main>
     <h2>Our Menu</h2>
 
-    <div style="text-align:center; margin-bottom:1rem;">
+    <div style="text-align:center; margin:1rem 0;">
       <button onclick="filterRecipes('All')">All</button>
       <button onclick="filterRecipes('Breakfast')">Breakfast</button>
       <button onclick="filterRecipes('Lunch')">Lunch</button>
       <button onclick="filterRecipes('Dinner')">Dinner</button>
     </div>
 
-    <div class="recipe-cards" id="recipeList"></div>
+    <div class="recipe-cards" id="recipeList" aria-live="polite">
+      <!-- JS will populate recipe cards here -->
+    </div>
   </main>
 
   <footer>

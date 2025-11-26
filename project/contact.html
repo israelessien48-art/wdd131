@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Contact Israel Essien at the Nigerian Resort Restaurant." />
+  <meta name="description" content="Contact Israel Essien — reservations and messages." />
   <title>Contact Israel Essien</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -21,21 +21,43 @@
   </header>
 
   <main>
-    <h2>Contact Us</h2>
+    <h2>Contact & Reservations</h2>
 
-    <form id="contactForm" novalidate>
-      <label for="contact-name">Your Name</label>
-      <input id="contact-name" name="name" type="text" required>
+    <section style="max-width:540px; margin:1rem auto; padding:1rem; background:#fff; border-radius:8px;">
+      <h3 style="text-align:center; color:#f36b3d;">Reserve a Table</h3>
+      <form id="reservationForm" novalidate>
+        <label for="res-name">Name</label>
+        <input id="res-name" name="name" type="text" required>
 
-      <label for="contact-email">Your Email</label>
-      <input id="contact-email" name="email" type="email" required>
+        <label for="res-email">Email</label>
+        <input id="res-email" name="email" type="email" required>
 
-      <label for="contact-message">Message</label>
-      <textarea id="contact-message" name="message" rows="5" required></textarea>
+        <label for="res-date">Date</label>
+        <input id="res-date" name="date" type="date" required>
 
-      <button class="btn" type="submit">Send</button>
-    </form>
-    <p id="contactResponse" style="text-align:center; font-weight:bold;"></p>
+        <label for="res-guests">Guests</label>
+        <input id="res-guests" name="guests" type="number" min="1" required>
+
+        <button class="btn" type="submit">Reserve</button>
+      </form>
+    </section>
+
+    <section style="max-width:540px; margin:1.5rem auto; padding:1rem; background:#fff; border-radius:8px;">
+      <h3 style="text-align:center; color:#f36b3d;">Send a Message</h3>
+      <form id="contactForm" novalidate>
+        <label for="contact-name">Name</label>
+        <input id="contact-name" name="name" type="text" required>
+
+        <label for="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" required>
+
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <p id="contactResponse" style="text-align:center; margin-top:0.8rem; font-weight:bold;"></p>
+    </section>
   </main>
 
   <footer>

@@ -1,6 +1,10 @@
-/* scripts/main.js */
+/* scripts/main.js
+   - Renders featured dishes on the homepage
+   - Renders recipe list on menu.html
+   - Filtering, favorites (localStorage), forms
+   - Uses template literals, arrays, objects, array methods, conditional branching
+*/
 
-// ========== Data (objects & arrays) ==========
 const recipes = [
   {
     id: 1,
@@ -28,16 +32,13 @@ const recipes = [
   }
 ];
 
-// ========== Helpers ==========
+// simple helpers
 const $ = (sel) => document.querySelector(sel);
-const $all = (sel) => Array.from(document.querySelectorAll(sel));
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+const esc = s => String(s).replace(/"/g, '&quot;');
 
-// Escape for attributes
-const esc = (s) => String(s).replace(/"/g, '&quot;');
-
-// ========== Render functions ==========
-function createCardHTML(item) {
-  // template literal used
+// build HTML card (used for menu and featured)
+function cardHTML(item) {
   return `
     <div class="card" data-id="${item.id}">
       <img src="${esc(item.image)}" alt="${esc(item.name)}" loading="lazy">
@@ -51,97 +52,89 @@ function createCardHTML(item) {
   `;
 }
 
-// Populate featured on homepage (first 3)
-function populateFeaturedDishes() {
-  const container = document.getElementById('featured');
+// populate featured (homepage) — uses first 3 items
+function populateFeatured() {
+  const container = document.querySelector('.dish-cards');
   if(!container) return;
   container.innerHTML = '';
-  const featured = recipes.slice(0, 3);
-  featured.forEach(r => {
-    container.insertAdjacentHTML('beforeend', createCardHTML(r));
-  });
+  recipes.slice(0,3).forEach(r => container.insertAdjacentHTML('beforeend', cardHTML(r)));
 }
 
-// Display recipes (menu)
+// render menu list (menu.html)
 function displayRecipes(category = 'All') {
   const container = document.getElementById('recipeList');
   if(!container) return;
   container.innerHTML = '';
-  const filtered = category === 'All' ? recipes : recipes.filter(r => r.category.toLowerCase() === category.toLowerCase());
-  filtered.forEach(r => container.insertAdjacentHTML('beforeend', createCardHTML(r)));
+  const filtered = category === 'All'
+    ? recipes
+    : recipes.filter(r => r.category.toLowerCase() === category.toLowerCase());
+  filtered.forEach(r => container.insertAdjacentHTML('beforeend', cardHTML(r)));
 }
 
-// ========== Favorites (localStorage) ==========
-function getFavorites() {
-  try {
-    return JSON.parse(localStorage.getItem('favorites') || '[]');
-  } catch {
-    return [];
-  }
+// filtering function (global for inline buttons)
+function filterRecipes(category) {
+  displayRecipes(category);
 }
-function setFavorites(list) {
-  localStorage.setItem('favorites', JSON.stringify(list));
-}
+
+// favorites using localStorage
 function addFavorite(id) {
   const item = recipes.find(r => r.id === id);
   if(!item) { alert('Recipe not found'); return; }
-  const fav = getFavorites();
-  if(fav.includes(item.id)) {
+  const key = 'favorites';
+  let list;
+  try { list = JSON.parse(localStorage.getItem(key) || '[]'); } catch { list = []; }
+  if(list.includes(item.id)) {
     alert(`${item.name} is already in favorites.`);
     return;
   }
-  fav.push(item.id);
-  setFavorites(fav);
-  alert(`${item.name} added to favorites!`);
+  list.push(item.id);
+  localStorage.setItem(key, JSON.stringify(list));
+  alert(`${item.name} added to favorites.`);
 }
 
-// ========== Forms ==========
-function initReservationForm() {
+// reservation form handler
+function initReservation() {
   const form = document.getElementById('reservationForm');
   if(!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('res-name')?.value || document.getElementById('name')?.value || '';
-    const guests = document.getElementById('res-guests')?.value || document.getElementById('guests')?.value || '';
-    const date = document.getElementById('res-date')?.value || document.getElementById('date')?.value || '';
-    if(!name || !guests || !date) { alert('Please complete the form.'); return; }
+    const name = document.getElementById('res-name').value.trim();
+    const email = document.getElementById('res-email').value.trim();
+    const date = document.getElementById('res-date').value;
+    const guests = document.getElementById('res-guests').value;
+    if(!name || !email || !date || !guests) {
+      alert('Please complete all fields.');
+      return;
+    }
     alert(`Thank you ${name}! Your reservation for ${guests} guest(s) on ${date} is confirmed.`);
     form.reset();
   });
 }
 
-function initContactForm() {
+// contact form handler
+function initContact() {
   const form = document.getElementById('contactForm');
   if(!form) return;
-  const responseEl = document.getElementById('contactResponse');
+  const resp = document.getElementById('contactResponse');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('contact-name').value.trim();
     const email = document.getElementById('contact-email').value.trim();
     const msg = document.getElementById('contact-message').value.trim();
     if(!name || !email || !msg) {
-      if(responseEl) responseEl.textContent = 'Please complete all fields.';
+      if(resp) resp.textContent = 'Please complete all fields.';
       return;
     }
-    if(responseEl) responseEl.textContent = `Thank you ${name}! Your message has been sent.`;
+    if(resp) resp.textContent = `Thank you ${name}! Your message has been sent.`;
     else alert(`Thank you ${name}! Your message has been sent.`);
     form.reset();
   });
 }
 
-// ========== Initialization ==========
+// init
 document.addEventListener('DOMContentLoaded', () => {
-  // render featured and menu (menu page will use displayRecipes)
-  populateFeaturedDishes();
+  populateFeatured();
   displayRecipes('All');
-  initReservationForm();
-  initContactForm();
-
-  // Add click handlers to filter buttons (if present)
-  $all('button[data-cat]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cat = btn.getAttribute('data-cat') || btn.textContent;
-      displayRecipes(cat);
-    });
-  });
+  initReservation();
+  initContact();
 });
