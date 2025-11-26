@@ -1,75 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Israel Essien | Nigerian Resort Restaurant</title>
-    <link rel="stylesheet" href="styles/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Israel Essien's Nigerian Resort Restaurant - home of Jollof, Egusi and Pounded Yam." />
+  <title>Israel Essien | Nigerian Resort Restaurant</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>Israel Essien's Nigerian Resort Restaurant</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="references.html">References</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Israel Essien's Nigerian Resort Restaurant</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="intro">
-            <h2>Welcome!</h2>
-            <p>Experience the rich flavors of Nigeria at our resort restaurant. From traditional Jollof Rice to Egusi Soup, enjoy authentic Nigerian dishes prepared with love and tradition.</p>
-        </section>
+  <main>
+    <section class="intro" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Welcome!</h2>
+      <p>Experience the rich flavors of Nigeria at our resort restaurant. From traditional Jollof Rice to Egusi Soup and Pounded Yam — prepared with love and tradition.</p>
+    </section>
 
-        <section class="featured-dishes">
-            <h2>Featured Dishes</h2>
-            <div class="recipe-cards">
-                <div class="card">
-                    <img src="images/dish1.jpg" alt="Jollof Rice" loading="lazy">
-                    <h3>Jollof Rice</h3>
-                    <p>A classic West African rice dish cooked in tomato sauce with spices.</p>
-                </div>
-                <div class="card">
-                    <img src="images/dish2.jpg" alt="Egusi Soup" loading="lazy">
-                    <h3>Egusi Soup</h3>
-                    <p>Hearty soup made with melon seeds, vegetables, and meat.</p>
-                </div>
-                <div class="card">
-                    <img src="images/dish3.jpg" alt="Pounded Yam" loading="lazy">
-                    <h3>Pounded Yam</h3>
-                    <p>Enjoy with Egusi Soup or any of your favorite soups.</p>
-                </div>
-            </div>
-        </section>
+    <section class="featured-dishes" aria-labelledby="featured-title">
+      <h2 id="featured-title">Featured Dishes</h2>
+      <div class="recipe-cards" id="dishCards">
+        <!-- JS will inject dish cards here (dish1/dish2/dish3) -->
+      </div>
+    </section>
 
-        <section class="reservation-form">
-            <h2>Reserve a Table</h2>
-            <form id="reservationForm">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" required>
+    <section class="reservation-form" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">Reserve a Table</h2>
+      <form id="reservationForm" novalidate>
+        <label for="res-name">Your Name</label>
+        <input id="res-name" name="name" type="text" required>
 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" required>
+        <label for="res-email">Your Email</label>
+        <input id="res-email" name="email" type="email" required>
 
-                <label for="date">Reservation Date:</label>
-                <input type="date" id="date" required>
+        <label for="res-date">Reservation Date</label>
+        <input id="res-date" name="date" type="date" required>
 
-                <label for="guests">Number of Guests:</label>
-                <input type="number" id="guests" min="1" required>
+        <label for="res-guests">Number of Guests</label>
+        <input id="res-guests" name="guests" type="number" min="1" required>
 
-                <button type="submit">Reserve</button>
-            </form>
-        </section>
-    </main>
+        <button type="submit">Reserve</button>
+      </form>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
+  </footer>
 
-    <script src="scripts/main.js"></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>

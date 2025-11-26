@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Israel Essien</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Contact Israel Essien at the Nigerian Resort Restaurant." />
+  <title>Contact Israel Essien</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>Contact Israel Essien</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="references.html">References</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Contact Israel Essien</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section style="max-width:500px; margin:2rem auto; padding:1rem; background-color:#ffecb3; border-radius:8px;">
-            <h2>Send a Message</h2>
-            <form id="contactForm">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+  <main>
+    <section class="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Send a Message</h2>
+      <form id="contactForm" novalidate>
+        <label for="contact-name">Your Name</label>
+        <input id="contact-name" name="name" type="text" required>
 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+        <label for="contact-email">Your Email</label>
+        <input id="contact-email" name="email" type="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
 
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
+        <button type="submit">Send</button>
+      </form>
+      <p id="contactResponse" aria-live="polite"></p>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Israel Essien | <a href="index.html">Home</a></p>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>
