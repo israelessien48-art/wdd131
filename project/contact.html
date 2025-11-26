@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Contact Israel Essien at the Nigerian Resort Restaurant." />
-  <title>Contact Israel Essien</title>
-  <link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-  <header>
-    <h1>Contact Israel Essien</h1>
+
+<header>
+    <h1>Israel Essien's<br>Nigerian Resort Restaurant</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="references.html">References</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <section class="contact-section" aria-labelledby="contact-title">
-      <h2 id="contact-title">Send a Message</h2>
-      <form id="contactForm" novalidate>
-        <label for="contact-name">Your Name</label>
-        <input id="contact-name" name="name" type="text" required>
+<main>
+    <h2>Contact Us</h2>
 
-        <label for="contact-email">Your Email</label>
-        <input id="contact-email" name="email" type="email" required>
+    <form style="max-width:400px; margin:2rem auto; text-align:left;">
+        <label>Name:</label>
+        <input type="text" style="width:100%; padding:10px; margin-bottom:10px;">
 
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" rows="5" required></textarea>
+        <label>Email:</label>
+        <input type="email" style="width:100%; padding:10px; margin-bottom:10px;">
 
-        <button type="submit">Send</button>
-      </form>
-      <p id="contactResponse" aria-live="polite"></p>
-    </section>
-  </main>
+        <label>Your Message:</label>
+        <textarea rows="5" style="width:100%; padding:10px;"></textarea>
 
-  <footer>
-    <p>&copy; 2025 Israel Essien | <a href="index.html">Home</a></p>
-  </footer>
+        <button class="btn" style="width:100%; margin-top:1rem;">Send</button>
+    </form>
+</main>
 
-  <script src="scripts/main.js" defer></script>
+<footer>
+    <p>© 2025 Israel Essien | <a href="references.html">References</a></p>
+</footer>
+
 </body>
 </html>

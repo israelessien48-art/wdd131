@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Menu — Israel Essien's Nigerian Resort Restaurant. Filter dishes and view details." />
-  <title>Israel Essien | Menu</title>
-  <link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <header>
-    <h1>Nigerian Resort Restaurant</h1>
+
+<header>
+    <h1>Israel Essien's<br>Nigerian Resort Restaurant</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="references.html">References</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <section class="filter" aria-labelledby="filter-title">
-      <h2 id="filter-title">Filter Recipes</h2>
-      <div style="text-align:center; margin-bottom:1rem;">
-        <button type="button" data-cat="All" onclick="filterRecipes('All')">All</button>
-        <button type="button" data-cat="Breakfast" onclick="filterRecipes('Breakfast')">Breakfast</button>
-        <button type="button" data-cat="Lunch" onclick="filterRecipes('Lunch')">Lunch</button>
-        <button type="button" data-cat="Dinner" onclick="filterRecipes('Dinner')">Dinner</button>
-      </div>
-    </section>
+<main>
+    <h2>Our Menu</h2>
 
-    <section class="recipe-cards" id="recipeList" aria-live="polite">
-      <!-- JS will populate recipe cards here -->
-    </section>
-  </main>
+    <div class="recipe-cards">
+        <div class="card">
+            <img src="images/dish1.jpg" alt="Jollof Rice">
+            <h3>Jollof Rice</h3>
+            <p>Tomato-based West African rice cooked with spices.</p>
+        </div>
 
-  <footer>
-    <p>&copy; 2025 Israel Essien | <a href="references.html">References</a></p>
-  </footer>
+        <div class="card">
+            <img src="images/dish2.jpg" alt="Egusi Soup">
+            <h3>Egusi Soup</h3>
+            <p>Made with melon seeds, vegetables, and meat.</p>
+        </div>
 
-  <script src="scripts/main.js" defer></script>
+        <div class="card">
+            <img src="images/dish3.jpg" alt="Pounded Yam">
+            <h3>Pounded Yam</h3>
+            <p>A soft, stretchy Nigerian classic.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 Israel Essien | <a href="references.html">References</a></p>
+</footer>
+
 </body>
 </html>
