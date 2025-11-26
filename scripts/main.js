@@ -9,7 +9,7 @@ const recipes = [
   {
     id: 1,
     name: 'Jollof Rice',
-    category: 'breakfast',
+    category: 'Breakfast',
     ingredients: ['Rice', 'Tomato', 'Onion', 'Spices'],
     instructions: 'Cook rice with tomato sauce and spices.',
     image: 'images/dish1.jpg'
