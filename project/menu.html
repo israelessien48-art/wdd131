@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="styles/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Menu — Israel Essien's Nigerian Resort Restaurant. Filter dishes and view details." />
+  <title>Israel Essien | Menu</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-
-<header>
+  <header>
     <h1>Israel Essien's<br>Nigerian Resort Restaurant</h1>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="references.html">References</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<main>
+  <main>
     <h2>Our Menu</h2>
 
-    <div class="recipe-cards">
-        <div class="card">
-            <img src="images/dish1.jpg" alt="Jollof Rice">
-            <h3>Jollof Rice</h3>
-            <p>Tomato-based West African rice cooked with spices.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/dish2.jpg" alt="Egusi Soup">
-            <h3>Egusi Soup</h3>
-            <p>Made with melon seeds, vegetables, and meat.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/dish3.jpg" alt="Pounded Yam">
-            <h3>Pounded Yam</h3>
-            <p>A soft, stretchy Nigerian classic.</p>
-        </div>
+    <div style="text-align:center; margin-bottom:1rem;">
+      <button onclick="filterRecipes('All')">All</button>
+      <button onclick="filterRecipes('Breakfast')">Breakfast</button>
+      <button onclick="filterRecipes('Lunch')">Lunch</button>
+      <button onclick="filterRecipes('Dinner')">Dinner</button>
     </div>
-</main>
 
-<footer>
+    <div class="recipe-cards" id="recipeList"></div>
+  </main>
+
+  <footer>
     <p>© 2025 Israel Essien | <a href="references.html">References</a></p>
-</footer>
+  </footer>
 
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>

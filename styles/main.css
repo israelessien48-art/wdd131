@@ -22,6 +22,7 @@ header {
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    line-height: 1.05;
 }
 
 nav ul {
@@ -30,6 +31,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin: 0;
 }
 
 nav a {
@@ -53,7 +55,9 @@ main {
 
 .welcome-text p {
     max-width: 700px;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.5rem auto;
+    font-size: 1.05rem;
+    color: #222;
 }
 
 /* ============================
@@ -73,18 +77,20 @@ main {
     width: 260px;
     padding-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 12px 12px 0 0;
+    display: block;
 }
 
 .card h3 {
     font-size: 1.3rem;
-    margin-top: 0.7rem;
+    margin: 0.7rem 0 0.4rem;
+    color: #222;
 }
 
 .card p {
@@ -106,10 +112,37 @@ main {
     text-decoration: none;
     margin-top: 1.5rem;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     background-color: #d85527;
+}
+
+/* ============================
+   FORMS (CONTACT/RESERVATION)
+============================ */
+form {
+    max-width: 480px;
+    margin: 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: left;
+}
+
+label { font-weight: bold; }
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
 /* ============================
@@ -122,4 +155,13 @@ footer {
     padding: 1.2rem 0;
     margin-top: 3rem;
 }
-footer a { color: #FFD39F; }
+footer a { color: #FFD39F; text-decoration: none; }
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    nav ul { flex-direction: column; gap: 0.6rem; }
+    .recipe-cards { flex-direction: column; align-items: center; }
+}
