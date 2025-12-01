@@ -15,7 +15,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="references.html">References</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -23,8 +23,8 @@
   <main>
     <h2>Contact & Reservations</h2>
 
-    <section style="max-width:540px; margin:1rem auto; padding:1rem; background:#fff; border-radius:8px;">
-      <h3 style="text-align:center; color:#f36b3d;">Reserve a Table</h3>
+    <section class="card" id="reservationSection">
+      <h3>Reserve a Table</h3>
       <form id="reservationForm" novalidate>
         <label for="res-name">Name</label>
         <input id="res-name" name="name" type="text" required>
@@ -42,8 +42,8 @@
       </form>
     </section>
 
-    <section style="max-width:540px; margin:1.5rem auto; padding:1rem; background:#fff; border-radius:8px;">
-      <h3 style="text-align:center; color:#f36b3d;">Send a Message</h3>
+    <section class="card" id="messageSection">
+      <h3>Send a Message</h3>
       <form id="contactForm" novalidate>
         <label for="contact-name">Name</label>
         <input id="contact-name" name="name" type="text" required>
@@ -56,7 +56,7 @@
 
         <button class="btn" type="submit">Send</button>
       </form>
-      <p id="contactResponse" style="text-align:center; margin-top:0.8rem; font-weight:bold;"></p>
+      <p id="contactResponse" aria-live="polite"></p>
     </section>
   </main>
 

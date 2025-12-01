@@ -13,7 +13,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
         <li><a href="references.html">References</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -23,16 +23,16 @@
   <main>
     <h2>Our Menu</h2>
 
-    <div style="text-align:center; margin:1rem 0;">
+    <div class="filter-buttons" style="text-align:center; margin:1rem 0;">
       <button onclick="filterRecipes('All')">All</button>
       <button onclick="filterRecipes('Breakfast')">Breakfast</button>
       <button onclick="filterRecipes('Lunch')">Lunch</button>
       <button onclick="filterRecipes('Dinner')">Dinner</button>
     </div>
 
-    <div class="recipe-cards" id="recipeList" aria-live="polite">
-      <!-- JS will populate recipe cards here -->
-    </div>
+    <section class="recipe-cards" id="recipeList" aria-live="polite">
+      <!-- JS populates recipe cards here -->
+    </section>
   </main>
 
   <footer>
