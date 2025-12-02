@@ -26,7 +26,7 @@ header {
 
 main {
     max-width: 500px;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
@@ -43,13 +43,13 @@ label {
 }
 
 .required {
-    color: red;
+    color: #B00020; /* AA contrast-safe red */
 }
 
 input, select, textarea {
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #666666; /* AA-safe border color */
 }
 
 .checkbox-group {
@@ -60,7 +60,7 @@ input, select, textarea {
 
 .submit-btn {
     background: var(--primary);
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 12px;
     font-size: 1rem;
@@ -91,22 +91,23 @@ footer {
     display: none;
 }
 
+/* DEFAULT STAR COLOR — FIXED FOR AA CONTRAST */
 .rating-group label.star {
     font-size: 1.5rem;
     cursor: pointer;
-    color: #ccc;
+    color: #666666;  /* AA contrast approved */
     transition: color 0.2s;
 }
 
-/* ⭐ Updated star hover/checked color for contrast compliance */
+/* HOVER + SELECTED STARS — ALREADY AA SAFE */
 .rating-group label.star:hover,
 .rating-group label.star:hover ~ label.star {
-    color: #B8860B; /* contrast-safe gold */
+    color: #B8860B; /* Dark gold, AA safe */
 }
 
 .rating-group input:checked + label.star,
 .rating-group input:checked + label.star ~ label.star {
-    color: #B8860B; /* contrast-safe gold */
+    color: #B8860B;
 }
 
 /* DESKTOP */
