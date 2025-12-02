@@ -98,14 +98,15 @@ footer {
     transition: color 0.2s;
 }
 
+/* ⭐ Updated star hover/checked color for contrast compliance */
 .rating-group label.star:hover,
 .rating-group label.star:hover ~ label.star {
-    color: gold;
+    color: #B8860B; /* contrast-safe gold */
 }
 
 .rating-group input:checked + label.star,
 .rating-group input:checked + label.star ~ label.star {
-    color: gold;
+    color: #B8860B; /* contrast-safe gold */
 }
 
 /* DESKTOP */
